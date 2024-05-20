@@ -1,25 +1,19 @@
-from url_params import (
+from src.tools.url_scraper.url_params import (
     UrlGenerator,
-    EntranceFee,
     Category,
-    FixedDate,
-    CustomDate,
-    YYYYMMDDDate,
 )
-from parser import RequestHeaders
-from parser import HtmlParser
-from helpers import retrieve_dotenv
-from helpers import save_file
-from parser import UrlScraper
+from src.tools.helpers import save_file
+from src.tools.helpers import retrieve_dotenv
+from src.tools.url_scraper.get_url_sync import UrlScraperSync
+from src.tools.url_scraper.request_headers import RequestHeaders
+from src.source_one import SourceOneHtmlAnalyzer
 
 
 class EventsApp:
-    def __init__(self,
-                 dotenv_path: str,
-                 server_data_json_filename: str = None,
-                 react_query_json_filename: str = None):
-        self.api_base_url = retrieve_dotenv(key="SOURCE_URL", dotenv_path=dotenv_path)
-        self.headers = RequestHeaders(cookie=retrieve_dotenv(key="COOKIE", dotenv_path=dotenv_path)).headers
+    def __init__(self, dotenv_path: str, server_data_json_filename: str = None, react_query_json_filename: str = None):
+
+        self.api_base_url = retrieve_dotenv(key="SOURCE_ONE_URL", dotenv_path=dotenv_path)
+        self.headers = RequestHeaders(cookie=retrieve_dotenv(key="SOURCE_ONE_COOKIE", dotenv_path=dotenv_path)).headers
 
         self.server_data_json_filename = server_data_json_filename
         self.react_query_json_filename = react_query_json_filename
@@ -44,16 +38,15 @@ class EventsApp:
                                          custom_date=custom_date)
 
         url = url_generator_obj.url
-
-        html_code = UrlScraper.make_request(url=url, headers=self.headers)
+        html_code = UrlScraperSync.make_request(url=url, headers=self.headers)
 
         if save_raw_html:
             save_file(content=html_code, path=raw_html_filename)
             print(f"Content was saved to {raw_html_filename} successfully")
 
-        HtmlParser.parse_html(html_code=html_code,
-                              server_data_json_filename=server_data_json_filename,
-                              react_query_json_filename=react_query_json_filename)
+        SourceOneHtmlAnalyzer.parse_html(html_code=html_code,
+                                         server_data_json_filename=server_data_json_filename,
+                                         react_query_json_filename=react_query_json_filename)
 
 
 if __name__ == "__main__":

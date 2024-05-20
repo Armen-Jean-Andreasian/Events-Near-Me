@@ -1,7 +1,7 @@
 import requests
 
 
-class UrlScraper:
+class UrlScraperSync:
     @staticmethod
     def make_request(url: str, headers: dict = None) -> str:
         """Returns website HTML in string"""

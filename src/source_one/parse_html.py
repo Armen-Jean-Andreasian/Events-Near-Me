@@ -1,9 +1,10 @@
 import re
-from helpers import str_to_json
-from helpers import save_json_file
+from src.tools.helpers import str_to_json
+from src.tools.helpers import save_json_file
+from src.tools.html_parser import AbsHtmlAnalyzer
 
 
-class HtmlParser:
+class SourceOneHtmlAnalyzer(AbsHtmlAnalyzer):
     @classmethod
     def parse_html(cls,
                    html_code: str,
