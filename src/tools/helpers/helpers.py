@@ -1,19 +1,20 @@
 import dotenv
+import aiofiles
 import json
+
+
+async def save_file(content: str, path: str):
+    async with aiofiles.open(path, 'w', encoding='utf-8') as file:
+        await file.write(content)
+
+
+async def save_json_file(content: dict, path: str) -> None:
+    async with aiofiles.open(path, 'w', encoding='utf-8') as json_file:
+        await json_file.write(json.dumps(content, indent=4))
 
 
 def retrieve_dotenv(key: str, dotenv_path: str):
     return dotenv.dotenv_values(dotenv_path=dotenv_path).get(key)
-
-
-def save_file(content: str, path: str):
-    with open(path, 'w', encoding='utf-8') as file:
-        file.write(content)
-
-
-def save_json_file(content: dict, path: str) -> None:
-    with open(path, 'w', encoding='utf-8') as json_file:
-        json.dump(content, json_file)
 
 
 def str_to_json(json_str_data: str) -> dict:

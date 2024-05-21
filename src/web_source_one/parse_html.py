@@ -1,15 +1,11 @@
 import re
 from src.tools.helpers import str_to_json
-from src.tools.helpers import save_json_file
 from src.tools.html_parser import AbsHtmlAnalyzer
 
 
 class SourceOneHtmlAnalyzer(AbsHtmlAnalyzer):
     @classmethod
-    def parse_html(cls,
-                   html_code: str,
-                   server_data_json_filename: str,
-                   react_query_json_filename: str):
+    def parse_html(cls, html_code: str) -> tuple[dict, dict]:
         """
         Scraps the url and gets the HTML code,
         Removes the HTML-specific leftover symbols,
@@ -17,13 +13,11 @@ class SourceOneHtmlAnalyzer(AbsHtmlAnalyzer):
         Saves them to two json files
         """
 
-        script_html_content = cls._detect_script_part(html_code)
+        script_html_content: str = cls._detect_script_part(html_code)
 
-        pure_script_content = cls._trim_html_tags(script_html_content)
+        pure_script_content: str = cls._trim_html_tags(script_html_content)
 
-        server_data, react_query_state = cls._extract_json(json_str=pure_script_content)
-        save_json_file(server_data, path=server_data_json_filename)
-        save_json_file(react_query_state, path=react_query_json_filename)
+        return cls._extract_json(json_str=pure_script_content)
 
     @classmethod
     def _detect_script_part(cls, html_code):
@@ -61,8 +55,8 @@ class SourceOneHtmlAnalyzer(AbsHtmlAnalyzer):
         """Extracts the json from the str HTML, fixes the broken parts of it and returns a tuple of two dicts"""
         content = json_str.split('REACT_QUERY_STATE = ')
 
-        server_data_json = content[0].split('SERVER_DATA = ')[1].strip()
-        react_query_state_json = content[1].strip()
+        server_data_json: str = content[0].split('SERVER_DATA = ')[1].strip()
+        react_query_state_json: str = content[1].strip()
 
         react_query_state_json_issue1 = str('"queryHash":"["')
         react_query_state_json_issue1_fix = str('"queryHash":["')
