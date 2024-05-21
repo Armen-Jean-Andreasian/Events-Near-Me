@@ -1,0 +1,1908 @@
+{
+    "mutations": [],
+    "queries": [
+        {
+            "queryKey": [
+                "category-browse",
+                "events",
+                "EventbriteCategory/101",
+                "85632763",
+                {
+                    "dates": [
+                        "current_future"
+                    ],
+                    "places": [
+                        "85632763"
+                    ],
+                    "tags": [
+                        "EventbriteCategory/101"
+                    ],
+                    "page_size": 8,
+                    "aggs": {
+                        "dates": {},
+                        "organizertagsautocomplete_agg": {
+                            "size": 50
+                        },
+                        "tags": {
+                            "size": 50
+                        }
+                    },
+                    "exclude": {
+                        "ids": []
+                    }
+                }
+            ],
+            "state": {
+                "status": "success",
+                "errorUpdateCount": 0,
+                "errorUpdatedAt": 0,
+                "dataUpdatedAt": 1716262971005,
+                "dataUpdateCount": 2,
+                "isInvalidated": false,
+                "fetchStatus": "idle",
+                "fetchMeta": null,
+                "error": null,
+                "data": {
+                    "articles": {},
+                    "current_user_id": null,
+                    "profile_search": {},
+                    "article_search": {},
+                    "profiles": {},
+                    "events": {
+                        "pagination": {
+                            "object_count": 100,
+                            "page_size": 8,
+                            "continuation": "eyJwYWdlIjoyfQ"
+                        },
+                        "results": [
+                            {
+                                "image": {
+                                    "edge_color_set": true,
+                                    "edge_color": "#8d8d90",
+                                    "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F713619289%2F178938166142%2F1%2Foriginal.20240307-034523?w=512&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C170%2C1306%2C653&s=9ef7925aa3107bc9fc5ab77bf31e7d9e",
+                                    "original": {
+                                        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F713619289%2F178938166142%2F1%2Foriginal.20240307-034523?auto=format%2Ccompress&q=75&sharp=10&s=92ad8791f58b0c0b82db501d20d5a3bc",
+                                        "width": 1307,
+                                        "height": 872
+                                    },
+                                    "crop_mask": {
+                                        "width": 1306,
+                                        "height": 653,
+                                        "top_left": {
+                                            "y": 170,
+                                            "x": 0
+                                        }
+                                    },
+                                    "aspect_ratio": 2,
+                                    "id": "713619289"
+                                },
+                                "timezone": "Asia/Ho_Chi_Minh",
+                                "id": "880593828847",
+                                "tickets_url": "https://www.eventbrite.com/checkout-external?eid=880593828847",
+                                "urgency_signals": {
+                                    "messages": [],
+                                    "categories": []
+                                },
+                                "tickets_by": "Eventbrite",
+                                "primary_organizer_id": "8085735703",
+                                "dedup": {
+                                    "count": 1,
+                                    "hash": ""
+                                },
+                                "num_children": 1,
+                                "debug_info": {},
+                                "parent_url": null,
+                                "hide_end_date": false,
+                                "start_date": "2024-06-07",
+                                "end_time": "22:00",
+                                "_type": "destination_event",
+                                "end_date": "2024-06-09",
+                                "tags": [
+                                    {
+                                        "prefix": "EventbriteSubCategory",
+                                        "tag": "EventbriteSubCategory/1001",
+                                        "display_name": "Startups & Small Business"
+                                    },
+                                    {
+                                        "prefix": "EventbriteCategory",
+                                        "tag": "EventbriteCategory/101",
+                                        "display_name": "Business & Professional",
+                                        "localized": {
+                                            "display_name": "Business & Professional"
+                                        }
+                                    },
+                                    {
+                                        "prefix": "EventbriteFormat",
+                                        "tag": "EventbriteFormat/9",
+                                        "display_name": "Class, Training, or Workshop"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Dtsgc",
+                                        "display_name": "Dtsgc",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/kinh_doanh",
+                                        "display_name": "kinh_doanh",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/b\u00e1n_h\u00e0ng",
+                                        "display_name": "b\u00e1n_h\u00e0ng",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/doanh_nh\u00e2n",
+                                        "display_name": "doanh_nh\u00e2n",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/k\u1ef9_n\u0103ng",
+                                        "display_name": "k\u1ef9_n\u0103ng",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/ph\u00e1t_tri\u1ec3n_b\u1ea3n_th\u00e2n",
+                                        "display_name": "ph\u00e1t_tri\u1ec3n_b\u1ea3n_th\u00e2n",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/pham_thanh_long",
+                                        "display_name": "pham_thanh_long",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/\u0111\u00e1nh_th\u1ee9c_s\u1ef1_gi\u00e0u_c\u00f3",
+                                        "display_name": "\u0111\u00e1nh_th\u1ee9c_s\u1ef1_gi\u00e0u_c\u00f3",
+                                        "prefix": "OrganizerTag"
+                                    }
+                                ],
+                                "eventbrite_event_id": "880593828847",
+                                "start_time": "08:00",
+                                "primary_venue": {
+                                    "_type": "destination_venue",
+                                    "name": "Trung t\u00e2m Ti\u1ec7c c\u01b0\u1edbi Louis Palace (\u0111\u1ed1i di\u1ec7n C\u00f4ng vi\u00ean Thi\u00ean \u0110\u01b0\u1eddng B\u1ea3o S\u01a1n)",
+                                    "venue_profile_id": null,
+                                    "address": {
+                                        "city": "Hanoi",
+                                        "country": "VN",
+                                        "region": "Hanoi",
+                                        "longitude": "105.6988892",
+                                        "localized_address_display": "Trung t\u00e2m Ti\u1ec7c c\u01b0\u1edbi Louis Palace (Km 5+200 L\u00ea Tr\u1ecdng T\u1ea5n k\u00e9o d\u00e0i), An Kh\u00e1nh, Ho\u00e0i \u0110\u1ee9c, H\u00e0 N\u1ed9i H\u00e0 N\u1ed9i, Hanoi, Hanoi 100000",
+                                        "postal_code": "100000",
+                                        "address_1": "Trung t\u00e2m Ti\u1ec7c c\u01b0\u1edbi Louis Palace (Km 5+200 L\u00ea Tr\u1ecdng T\u1ea5n k\u00e9o d\u00e0i), An Kh\u00e1nh, Ho\u00e0i \u0110\u1ee9c, H\u00e0 N\u1ed9i",
+                                        "address_2": "H\u00e0 N\u1ed9i",
+                                        "latitude": "21.0243168",
+                                        "localized_multi_line_address_display": [
+                                            "Trung t\u00e2m Ti\u1ec7c c\u01b0\u1edbi Louis Palace (Km 5+200 L\u00ea Tr\u1ecdng T\u1ea5n k\u00e9o d\u00e0i), An Kh\u00e1nh, Ho\u00e0i \u0110\u1ee9c, H\u00e0 N\u1ed9i",
+                                            "H\u00e0 N\u1ed9i",
+                                            "Hanoi, Hanoi 100000"
+                                        ],
+                                        "localized_area_display": "Hanoi, Hanoi"
+                                    },
+                                    "venue_profile_url": "",
+                                    "id": "207819439"
+                                },
+                                "full_description": null,
+                                "image_id": "713619289",
+                                "is_protected_event": false,
+                                "is_cancelled": null,
+                                "primary_venue_id": "207819439",
+                                "checkout_flow": "widget",
+                                "series_id": null,
+                                "name": "\u0110\u00c1NH TH\u1ee8C S\u1ef0 GI\u00c0U C\u00d3 64 -  H\u00e0 N\u1ed9i  (07,08,09/6/2024)",
+                                "language": "en-us",
+                                "url": "https://www.eventbrite.com/e/anh-thuc-su-giau-co-64-ha-noi-07080962024-tickets-880593828847",
+                                "hide_start_date": false,
+                                "summary": "C\u00f4ng ty TNHH \u0110\u00e0o T\u1ea1o Doanh Nh\u00e2n ph\u1ed1i h\u1ee3p c\u00f9ng Di\u1ec5n gi\u1ea3/Lu\u1eadt s\u01b0 Ph\u1ea1m Th\u00e0nh Long",
+                                "is_online_event": false,
+                                "eid": "880593828847",
+                                "published": "2024-04-10T03:27:25Z"
+                            },
+                            {
+                                "image": {
+                                    "edge_color_set": true,
+                                    "edge_color": null,
+                                    "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F707939849%2F220572363630%2F1%2Foriginal.jpg?w=156&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C114%2C156%2C78&s=07352e0d0d00a0fd817bc071e21cce3d",
+                                    "original": {
+                                        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F707939849%2F220572363630%2F1%2Foriginal.jpg?auto=format%2Ccompress&q=75&sharp=10&s=38626e5c63035bae168f82bf9c641cba",
+                                        "width": 156,
+                                        "height": 289
+                                    },
+                                    "crop_mask": {
+                                        "width": 156,
+                                        "height": 78,
+                                        "top_left": {
+                                            "y": 114,
+                                            "x": 0
+                                        }
+                                    },
+                                    "aspect_ratio": 2,
+                                    "id": "707939849"
+                                },
+                                "timezone": "Asia/Ho_Chi_Minh",
+                                "id": "852652475507",
+                                "tickets_url": "https://www.eventbrite.com/checkout-external?eid=852652475507",
+                                "urgency_signals": {
+                                    "messages": [],
+                                    "categories": []
+                                },
+                                "tickets_by": "Eventbrite",
+                                "primary_organizer_id": "14657133729",
+                                "dedup": {
+                                    "count": 1,
+                                    "hash": ""
+                                },
+                                "num_children": 1,
+                                "debug_info": {},
+                                "parent_url": null,
+                                "hide_end_date": false,
+                                "start_date": "2024-05-27",
+                                "end_time": "17:00",
+                                "_type": "destination_event",
+                                "end_date": "2024-05-29",
+                                "tags": [
+                                    {
+                                        "prefix": "EventbriteSubCategory",
+                                        "tag": "EventbriteSubCategory/1002",
+                                        "display_name": "Finance"
+                                    },
+                                    {
+                                        "prefix": "EventbriteCategory",
+                                        "tag": "EventbriteCategory/101",
+                                        "display_name": "Business & Professional",
+                                        "localized": {
+                                            "display_name": "Business & Professional"
+                                        }
+                                    },
+                                    {
+                                        "prefix": "EventbriteFormat",
+                                        "tag": "EventbriteFormat/9",
+                                        "display_name": "Class, Training, or Workshop"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Finance",
+                                        "display_name": "Finance",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Investment",
+                                        "display_name": "Investment",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Companies",
+                                        "display_name": "Companies",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Venture_capital",
+                                        "display_name": "Venture_capital",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/private_equity",
+                                        "display_name": "private_equity",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/financial_growth",
+                                        "display_name": "financial_growth",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/company_financial",
+                                        "display_name": "company_financial",
+                                        "prefix": "OrganizerTag"
+                                    }
+                                ],
+                                "eventbrite_event_id": "852652475507",
+                                "start_time": "09:00",
+                                "primary_venue": {
+                                    "_type": "destination_venue",
+                                    "name": "Pullman Saigon Centre",
+                                    "venue_profile_id": null,
+                                    "address": {
+                                        "city": "Singapore",
+                                        "country": "VN",
+                                        "region": "Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh",
+                                        "longitude": "106.691666",
+                                        "localized_address_display": "148 \u0110\u01b0\u1eddng Tr\u1ea7n H\u01b0ng \u0110\u1ea1o, Singapore, Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh 070000",
+                                        "postal_code": "070000",
+                                        "address_1": "148 \u0110\u01b0\u1eddng Tr\u1ea7n H\u01b0ng \u0110\u1ea1o",
+                                        "address_2": "",
+                                        "latitude": "10.7643345",
+                                        "localized_multi_line_address_display": [
+                                            "148 \u0110\u01b0\u1eddng Tr\u1ea7n H\u01b0ng \u0110\u1ea1o",
+                                            "Singapore, Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh 070000"
+                                        ],
+                                        "localized_area_display": "Singapore, Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh"
+                                    },
+                                    "venue_profile_url": "",
+                                    "id": "200590299"
+                                },
+                                "full_description": null,
+                                "image_id": "707939849",
+                                "is_protected_event": false,
+                                "is_cancelled": null,
+                                "primary_venue_id": "200590299",
+                                "checkout_flow": "widget",
+                                "series_id": null,
+                                "name": "Private Equity Masterclass",
+                                "language": "en-us",
+                                "url": "https://www.eventbrite.sg/e/private-equity-masterclass-tickets-852652475507",
+                                "hide_start_date": false,
+                                "summary": "The objective of this program is to provide knowledge, and detailed understanding of equity investments followed in the private equity ind",
+                                "is_online_event": false,
+                                "eid": "852652475507",
+                                "published": "2024-02-29T02:54:34Z"
+                            },
+                            {
+                                "image": {
+                                    "edge_color_set": true,
+                                    "edge_color": null,
+                                    "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F708886969%2F220572363630%2F1%2Foriginal.20220613-092537?w=512&auto=format%2Ccompress&q=75&sharp=10&rect=56%2C0%2C1000%2C500&s=ce1df33e020521b2e32811ba60c16d33",
+                                    "original": {
+                                        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F708886969%2F220572363630%2F1%2Foriginal.20220613-092537?auto=format%2Ccompress&q=75&sharp=10&s=ab56ee784da4bd5042d9f47c7e5dbcb1",
+                                        "width": 1113,
+                                        "height": 500
+                                    },
+                                    "crop_mask": {
+                                        "width": 1000,
+                                        "height": 500,
+                                        "top_left": {
+                                            "y": 0,
+                                            "x": 56
+                                        }
+                                    },
+                                    "aspect_ratio": 2,
+                                    "id": "708886969"
+                                },
+                                "timezone": "Asia/Bangkok",
+                                "id": "853321456447",
+                                "tickets_url": "https://www.eventbrite.com/checkout-external?eid=853321456447",
+                                "urgency_signals": {
+                                    "messages": [],
+                                    "categories": []
+                                },
+                                "tickets_by": "Eventbrite",
+                                "primary_organizer_id": "14657133729",
+                                "dedup": {
+                                    "count": 1,
+                                    "hash": ""
+                                },
+                                "num_children": 1,
+                                "debug_info": {},
+                                "parent_url": null,
+                                "hide_end_date": false,
+                                "start_date": "2024-06-04",
+                                "end_time": "17:00",
+                                "_type": "destination_event",
+                                "end_date": "2024-06-06",
+                                "tags": [
+                                    {
+                                        "prefix": "EventbriteSubCategory",
+                                        "tag": "EventbriteSubCategory/1011",
+                                        "display_name": "Investment"
+                                    },
+                                    {
+                                        "prefix": "EventbriteCategory",
+                                        "tag": "EventbriteCategory/101",
+                                        "display_name": "Business & Professional",
+                                        "localized": {
+                                            "display_name": "Business & Professional"
+                                        }
+                                    },
+                                    {
+                                        "prefix": "EventbriteFormat",
+                                        "tag": "EventbriteFormat/9",
+                                        "display_name": "Class, Training, or Workshop"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Esg",
+                                        "display_name": "Esg",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/esginvesting",
+                                        "display_name": "esginvesting",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/training_course",
+                                        "display_name": "training_course",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/esg_investing",
+                                        "display_name": "esg_investing",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/esgstrategies",
+                                        "display_name": "esgstrategies",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/esg_risk",
+                                        "display_name": "esg_risk",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/esg_management",
+                                        "display_name": "esg_management",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/esg_training",
+                                        "display_name": "esg_training",
+                                        "prefix": "OrganizerTag"
+                                    }
+                                ],
+                                "eventbrite_event_id": "853321456447",
+                                "start_time": "09:00",
+                                "primary_venue": {
+                                    "_type": "destination_venue",
+                                    "name": "Pullman Saigon Centre",
+                                    "venue_profile_id": null,
+                                    "address": {
+                                        "city": "Singapore",
+                                        "country": "VN",
+                                        "region": "Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh",
+                                        "longitude": "106.691666",
+                                        "localized_address_display": "148 \u0110\u01b0\u1eddng Tr\u1ea7n H\u01b0ng \u0110\u1ea1o, Singapore, Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh 070000",
+                                        "postal_code": "070000",
+                                        "address_1": "148 \u0110\u01b0\u1eddng Tr\u1ea7n H\u01b0ng \u0110\u1ea1o",
+                                        "address_2": "",
+                                        "latitude": "10.7643345",
+                                        "localized_multi_line_address_display": [
+                                            "148 \u0110\u01b0\u1eddng Tr\u1ea7n H\u01b0ng \u0110\u1ea1o",
+                                            "Singapore, Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh 070000"
+                                        ],
+                                        "localized_area_display": "Singapore, Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh"
+                                    },
+                                    "venue_profile_url": "",
+                                    "id": "200807199"
+                                },
+                                "full_description": null,
+                                "image_id": "708886969",
+                                "is_protected_event": false,
+                                "is_cancelled": null,
+                                "primary_venue_id": "200807199",
+                                "checkout_flow": "widget",
+                                "series_id": null,
+                                "name": "ESG Investing Masterclass",
+                                "language": "en-gb",
+                                "url": "https://www.eventbrite.sg/e/esg-investing-masterclass-tickets-853321456447",
+                                "hide_start_date": false,
+                                "summary": "The course will provide a detailed explanation of the various frameworks for including ESG and sustainable investment practices from the per",
+                                "is_online_event": false,
+                                "eid": "853321456447",
+                                "published": "2024-03-01T03:57:37Z"
+                            },
+                            {
+                                "image": {
+                                    "edge_color_set": true,
+                                    "edge_color": null,
+                                    "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F707971989%2F220572363630%2F1%2Foriginal.jpg?w=156&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C113%2C156%2C78&s=17da94fecb9b43bcaf275089c7be0aa7",
+                                    "original": {
+                                        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F707971989%2F220572363630%2F1%2Foriginal.jpg?auto=format%2Ccompress&q=75&sharp=10&s=643293f8c3f772be09ae93f041995830",
+                                        "width": 156,
+                                        "height": 289
+                                    },
+                                    "crop_mask": {
+                                        "width": 156,
+                                        "height": 78,
+                                        "top_left": {
+                                            "y": 113,
+                                            "x": 0
+                                        }
+                                    },
+                                    "aspect_ratio": 2,
+                                    "id": "707971989"
+                                },
+                                "timezone": "Asia/Ho_Chi_Minh",
+                                "id": "852677099157",
+                                "tickets_url": "https://www.eventbrite.com/checkout-external?eid=852677099157",
+                                "urgency_signals": {
+                                    "messages": [
+                                        "salesEndSoon"
+                                    ],
+                                    "categories": []
+                                },
+                                "tickets_by": "Eventbrite",
+                                "primary_organizer_id": "14657133729",
+                                "dedup": {
+                                    "count": 1,
+                                    "hash": ""
+                                },
+                                "num_children": 1,
+                                "debug_info": {},
+                                "parent_url": null,
+                                "hide_end_date": false,
+                                "start_date": "2024-05-22",
+                                "end_time": "17:00",
+                                "_type": "destination_event",
+                                "end_date": "2024-05-24",
+                                "tags": [
+                                    {
+                                        "prefix": "EventbriteSubCategory",
+                                        "tag": "EventbriteSubCategory/1002",
+                                        "display_name": "Finance"
+                                    },
+                                    {
+                                        "prefix": "EventbriteCategory",
+                                        "tag": "EventbriteCategory/101",
+                                        "display_name": "Business & Professional",
+                                        "localized": {
+                                            "display_name": "Business & Professional"
+                                        }
+                                    },
+                                    {
+                                        "prefix": "EventbriteFormat",
+                                        "tag": "EventbriteFormat/9",
+                                        "display_name": "Class, Training, or Workshop"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Financing",
+                                        "display_name": "Financing",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Budget",
+                                        "display_name": "Budget",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Inventory",
+                                        "display_name": "Inventory",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/financial_management",
+                                        "display_name": "financial_management",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/cash_flow",
+                                        "display_name": "cash_flow",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/inventory_management",
+                                        "display_name": "inventory_management",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/financial_analysis",
+                                        "display_name": "financial_analysis",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/financial_control",
+                                        "display_name": "financial_control",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/advanced_financial",
+                                        "display_name": "advanced_financial",
+                                        "prefix": "OrganizerTag"
+                                    }
+                                ],
+                                "eventbrite_event_id": "852677099157",
+                                "start_time": "09:00",
+                                "primary_venue": {
+                                    "_type": "destination_venue",
+                                    "name": "Pullman Saigon Centre",
+                                    "venue_profile_id": null,
+                                    "address": {
+                                        "city": "Singapore",
+                                        "country": "VN",
+                                        "region": "Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh",
+                                        "longitude": "106.691666",
+                                        "localized_address_display": "148 \u0110\u01b0\u1eddng Tr\u1ea7n H\u01b0ng \u0110\u1ea1o, Singapore, Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh 070000",
+                                        "postal_code": "070000",
+                                        "address_1": "148 \u0110\u01b0\u1eddng Tr\u1ea7n H\u01b0ng \u0110\u1ea1o",
+                                        "address_2": "",
+                                        "latitude": "10.7643345",
+                                        "localized_multi_line_address_display": [
+                                            "148 \u0110\u01b0\u1eddng Tr\u1ea7n H\u01b0ng \u0110\u1ea1o",
+                                            "Singapore, Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh 070000"
+                                        ],
+                                        "localized_area_display": "Singapore, Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh"
+                                    },
+                                    "venue_profile_url": "",
+                                    "id": "200597429"
+                                },
+                                "full_description": null,
+                                "image_id": "707971989",
+                                "is_protected_event": false,
+                                "is_cancelled": null,
+                                "primary_venue_id": "200597429",
+                                "checkout_flow": "widget",
+                                "series_id": null,
+                                "name": "Advanced Financial Analysis and Management",
+                                "language": "en-us",
+                                "url": "https://www.eventbrite.sg/e/advanced-financial-analysis-and-management-tickets-852677099157",
+                                "hide_start_date": false,
+                                "summary": "The Course will provide participants with a structured process and methodology to analyze and understand financial information and improve.",
+                                "is_online_event": false,
+                                "eid": "852677099157",
+                                "published": "2024-02-29T04:05:07Z"
+                            },
+                            {
+                                "image": {
+                                    "edge_color_set": true,
+                                    "edge_color": "#ffffff",
+                                    "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F708901579%2F220572363630%2F1%2Foriginal.20220323-074549?w=216&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C23%2C216%2C108&s=bb3d09643217b0b2e5533caef44f0347",
+                                    "original": {
+                                        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F708901579%2F220572363630%2F1%2Foriginal.20220323-074549?auto=format%2Ccompress&q=75&sharp=10&s=39d799170bc64f781b8a043d1d66f4df",
+                                        "width": 216,
+                                        "height": 154
+                                    },
+                                    "crop_mask": {
+                                        "width": 216,
+                                        "height": 108,
+                                        "top_left": {
+                                            "y": 23,
+                                            "x": 0
+                                        }
+                                    },
+                                    "aspect_ratio": 2,
+                                    "id": "708901579"
+                                },
+                                "timezone": "Asia/Ho_Chi_Minh",
+                                "id": "853339931707",
+                                "tickets_url": "https://www.eventbrite.com/checkout-external?eid=853339931707",
+                                "urgency_signals": {
+                                    "messages": [],
+                                    "categories": []
+                                },
+                                "tickets_by": "Eventbrite",
+                                "primary_organizer_id": "14657133729",
+                                "dedup": {
+                                    "count": 1,
+                                    "hash": ""
+                                },
+                                "num_children": 1,
+                                "debug_info": {},
+                                "parent_url": null,
+                                "hide_end_date": false,
+                                "start_date": "2024-05-21",
+                                "end_time": "17:00",
+                                "_type": "destination_event",
+                                "end_date": "2024-05-23",
+                                "tags": [
+                                    {
+                                        "prefix": "EventbriteSubCategory",
+                                        "tag": "EventbriteSubCategory/1002",
+                                        "display_name": "Finance"
+                                    },
+                                    {
+                                        "prefix": "EventbriteCategory",
+                                        "tag": "EventbriteCategory/101",
+                                        "display_name": "Business & Professional",
+                                        "localized": {
+                                            "display_name": "Business & Professional"
+                                        }
+                                    },
+                                    {
+                                        "prefix": "EventbriteFormat",
+                                        "tag": "EventbriteFormat/9",
+                                        "display_name": "Class, Training, or Workshop"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Business",
+                                        "display_name": "Business",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Financial",
+                                        "display_name": "Financial",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Corporate",
+                                        "display_name": "Corporate",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Fundraising",
+                                        "display_name": "Fundraising",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Capital",
+                                        "display_name": "Capital",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/corporate_training",
+                                        "display_name": "corporate_training",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/corporate_fund",
+                                        "display_name": "corporate_fund",
+                                        "prefix": "OrganizerTag"
+                                    }
+                                ],
+                                "eventbrite_event_id": "853339931707",
+                                "start_time": "09:00",
+                                "primary_venue": {
+                                    "_type": "destination_venue",
+                                    "name": "Pullman Saigon Centre",
+                                    "venue_profile_id": null,
+                                    "address": {
+                                        "city": "Singapore",
+                                        "country": "VN",
+                                        "region": "Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh",
+                                        "longitude": "106.691666",
+                                        "localized_address_display": "148 \u0110\u01b0\u1eddng Tr\u1ea7n H\u01b0ng \u0110\u1ea1o, Singapore, Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh 070000",
+                                        "postal_code": "070000",
+                                        "address_1": "148 \u0110\u01b0\u1eddng Tr\u1ea7n H\u01b0ng \u0110\u1ea1o",
+                                        "address_2": "",
+                                        "latitude": "10.7643345",
+                                        "localized_multi_line_address_display": [
+                                            "148 \u0110\u01b0\u1eddng Tr\u1ea7n H\u01b0ng \u0110\u1ea1o",
+                                            "Singapore, Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh 070000"
+                                        ],
+                                        "localized_area_display": "Singapore, Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh"
+                                    },
+                                    "venue_profile_url": "",
+                                    "id": "200810369"
+                                },
+                                "full_description": null,
+                                "image_id": "708901579",
+                                "is_protected_event": false,
+                                "is_cancelled": null,
+                                "primary_venue_id": "200810369",
+                                "checkout_flow": "widget",
+                                "series_id": null,
+                                "name": "Corporate Fundraising Masterclass",
+                                "language": "en-gb",
+                                "url": "https://www.eventbrite.sg/e/corporate-fundraising-masterclass-tickets-853339931707",
+                                "hide_start_date": false,
+                                "summary": "The course equips you with a comprehension of the various industry standards, strategies, and practices in corporate fundraising. Our course",
+                                "is_online_event": false,
+                                "eid": "853339931707",
+                                "published": "2024-03-01T04:45:11Z"
+                            },
+                            {
+                                "image": {
+                                    "edge_color_set": true,
+                                    "edge_color": null,
+                                    "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F708937269%2F220572363630%2F1%2Foriginal.jpg?w=156&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C113%2C156%2C78&s=fd71b707d5ead3be8b50dbb6330572eb",
+                                    "original": {
+                                        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F708937269%2F220572363630%2F1%2Foriginal.jpg?auto=format%2Ccompress&q=75&sharp=10&s=96052182d924ff08a5901fcd92ce9d59",
+                                        "width": 156,
+                                        "height": 289
+                                    },
+                                    "crop_mask": {
+                                        "width": 156,
+                                        "height": 78,
+                                        "top_left": {
+                                            "y": 113,
+                                            "x": 0
+                                        }
+                                    },
+                                    "aspect_ratio": 2,
+                                    "id": "708937269"
+                                },
+                                "timezone": "Asia/Ho_Chi_Minh",
+                                "id": "853368517207",
+                                "tickets_url": "https://www.eventbrite.com/checkout-external?eid=853368517207",
+                                "urgency_signals": {
+                                    "messages": [],
+                                    "categories": []
+                                },
+                                "tickets_by": "Eventbrite",
+                                "primary_organizer_id": "14657133729",
+                                "dedup": {
+                                    "count": 1,
+                                    "hash": ""
+                                },
+                                "num_children": 1,
+                                "debug_info": {},
+                                "parent_url": null,
+                                "hide_end_date": false,
+                                "start_date": "2024-06-03",
+                                "end_time": "17:00",
+                                "_type": "destination_event",
+                                "end_date": "2024-06-05",
+                                "tags": [
+                                    {
+                                        "prefix": "EventbriteSubCategory",
+                                        "tag": "EventbriteSubCategory/1002",
+                                        "display_name": "Finance"
+                                    },
+                                    {
+                                        "prefix": "EventbriteCategory",
+                                        "tag": "EventbriteCategory/101",
+                                        "display_name": "Business & Professional",
+                                        "localized": {
+                                            "display_name": "Business & Professional"
+                                        }
+                                    },
+                                    {
+                                        "prefix": "EventbriteFormat",
+                                        "tag": "EventbriteFormat/9",
+                                        "display_name": "Class, Training, or Workshop"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Business",
+                                        "display_name": "Business",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Training",
+                                        "display_name": "Training",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Finance",
+                                        "display_name": "Finance",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/business_model",
+                                        "display_name": "business_model",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/business_innovation",
+                                        "display_name": "business_innovation",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/model_innovation",
+                                        "display_name": "model_innovation",
+                                        "prefix": "OrganizerTag"
+                                    }
+                                ],
+                                "eventbrite_event_id": "853368517207",
+                                "start_time": "09:00",
+                                "primary_venue": {
+                                    "_type": "destination_venue",
+                                    "name": "Pullman Saigon Centre",
+                                    "venue_profile_id": null,
+                                    "address": {
+                                        "city": "Singapore",
+                                        "country": "VN",
+                                        "region": "Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh",
+                                        "longitude": "106.691666",
+                                        "localized_address_display": "148 \u0110\u01b0\u1eddng Tr\u1ea7n H\u01b0ng \u0110\u1ea1o, Singapore, Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh 070000",
+                                        "postal_code": "070000",
+                                        "address_1": "148 \u0110\u01b0\u1eddng Tr\u1ea7n H\u01b0ng \u0110\u1ea1o",
+                                        "address_2": "",
+                                        "latitude": "10.7643345",
+                                        "localized_multi_line_address_display": [
+                                            "148 \u0110\u01b0\u1eddng Tr\u1ea7n H\u01b0ng \u0110\u1ea1o",
+                                            "Singapore, Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh 070000"
+                                        ],
+                                        "localized_area_display": "Singapore, Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh"
+                                    },
+                                    "venue_profile_url": "",
+                                    "id": "200819229"
+                                },
+                                "full_description": null,
+                                "image_id": "708937269",
+                                "is_protected_event": false,
+                                "is_cancelled": null,
+                                "primary_venue_id": "200819229",
+                                "checkout_flow": "widget",
+                                "series_id": null,
+                                "name": "Business Model Innovation",
+                                "language": "en-us",
+                                "url": "https://www.eventbrite.sg/e/business-model-innovation-tickets-853368517207",
+                                "hide_start_date": false,
+                                "summary": "The course equips you with a comprehension on the various innovation strategies for your business model, which will enhance your business gr",
+                                "is_online_event": false,
+                                "eid": "853368517207",
+                                "published": "2024-03-01T06:27:27Z"
+                            },
+                            {
+                                "image": {
+                                    "edge_color_set": true,
+                                    "edge_color": null,
+                                    "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F708839289%2F220572363630%2F1%2Foriginal.jpg?w=156&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C114%2C156%2C78&s=7cd76f7587a4df65547c44d851612ef6",
+                                    "original": {
+                                        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F708839289%2F220572363630%2F1%2Foriginal.jpg?auto=format%2Ccompress&q=75&sharp=10&s=d590eea701080d261715af45331c1665",
+                                        "width": 156,
+                                        "height": 289
+                                    },
+                                    "crop_mask": {
+                                        "width": 156,
+                                        "height": 78,
+                                        "top_left": {
+                                            "y": 114,
+                                            "x": 0
+                                        }
+                                    },
+                                    "aspect_ratio": 2,
+                                    "id": "708839289"
+                                },
+                                "timezone": "Asia/Singapore",
+                                "id": "853283071637",
+                                "tickets_url": "https://www.eventbrite.com/checkout-external?eid=853283071637",
+                                "urgency_signals": {
+                                    "messages": [
+                                        "salesEndSoon"
+                                    ],
+                                    "categories": []
+                                },
+                                "tickets_by": "Eventbrite",
+                                "primary_organizer_id": "14657133729",
+                                "dedup": {
+                                    "count": 1,
+                                    "hash": ""
+                                },
+                                "num_children": 1,
+                                "debug_info": {},
+                                "parent_url": null,
+                                "hide_end_date": false,
+                                "start_date": "2024-05-22",
+                                "end_time": "17:00",
+                                "_type": "destination_event",
+                                "end_date": "2024-05-24",
+                                "tags": [
+                                    {
+                                        "prefix": "EventbriteSubCategory",
+                                        "tag": "EventbriteSubCategory/1002",
+                                        "display_name": "Finance"
+                                    },
+                                    {
+                                        "prefix": "EventbriteCategory",
+                                        "tag": "EventbriteCategory/101",
+                                        "display_name": "Business & Professional",
+                                        "localized": {
+                                            "display_name": "Business & Professional"
+                                        }
+                                    },
+                                    {
+                                        "prefix": "EventbriteFormat",
+                                        "tag": "EventbriteFormat/9",
+                                        "display_name": "Class, Training, or Workshop"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Management",
+                                        "display_name": "Management",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Riskmanagement",
+                                        "display_name": "Riskmanagement",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Liquidity",
+                                        "display_name": "Liquidity",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Managementtraining",
+                                        "display_name": "Managementtraining",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/risk_management",
+                                        "display_name": "risk_management",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/management_training",
+                                        "display_name": "management_training",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/effective_management",
+                                        "display_name": "effective_management",
+                                        "prefix": "OrganizerTag"
+                                    }
+                                ],
+                                "eventbrite_event_id": "853283071637",
+                                "start_time": "09:00",
+                                "primary_venue": {
+                                    "_type": "destination_venue",
+                                    "name": "Pullman Saigon Centre",
+                                    "venue_profile_id": null,
+                                    "address": {
+                                        "city": "Singapore",
+                                        "country": "VN",
+                                        "region": "Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh",
+                                        "longitude": "106.691666",
+                                        "localized_address_display": "148 \u0110\u01b0\u1eddng Tr\u1ea7n H\u01b0ng \u0110\u1ea1o, Singapore, Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh 070000",
+                                        "postal_code": "070000",
+                                        "address_1": "148 \u0110\u01b0\u1eddng Tr\u1ea7n H\u01b0ng \u0110\u1ea1o",
+                                        "address_2": "",
+                                        "latitude": "10.7643345",
+                                        "localized_multi_line_address_display": [
+                                            "148 \u0110\u01b0\u1eddng Tr\u1ea7n H\u01b0ng \u0110\u1ea1o",
+                                            "Singapore, Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh 070000"
+                                        ],
+                                        "localized_area_display": "Singapore, Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh"
+                                    },
+                                    "venue_profile_url": "",
+                                    "id": "200795659"
+                                },
+                                "full_description": null,
+                                "image_id": "708839289",
+                                "is_protected_event": false,
+                                "is_cancelled": null,
+                                "primary_venue_id": "200795659",
+                                "checkout_flow": "widget",
+                                "series_id": null,
+                                "name": "Effective Liquidity Risk Management",
+                                "language": "en-us",
+                                "url": "https://www.eventbrite.sg/e/effective-liquidity-risk-management-tickets-853283071637",
+                                "hide_start_date": false,
+                                "summary": "This interactive workshop course is apt for participants already engaged in or in support of liquidity risk management, either within a give",
+                                "is_online_event": false,
+                                "eid": "853283071637",
+                                "published": "2024-03-01T02:24:47Z"
+                            },
+                            {
+                                "image": {
+                                    "edge_color_set": true,
+                                    "edge_color": null,
+                                    "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F708027069%2F220572363630%2F1%2Foriginal.jpg?w=156&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C114%2C156%2C78&s=5edf7203eef30946b25cd59967c03bb2",
+                                    "original": {
+                                        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F708027069%2F220572363630%2F1%2Foriginal.jpg?auto=format%2Ccompress&q=75&sharp=10&s=e7f0813e781e6b08e30fdf6ebd9291f6",
+                                        "width": 156,
+                                        "height": 289
+                                    },
+                                    "crop_mask": {
+                                        "width": 156,
+                                        "height": 78,
+                                        "top_left": {
+                                            "y": 114,
+                                            "x": 0
+                                        }
+                                    },
+                                    "aspect_ratio": 2,
+                                    "id": "708027069"
+                                },
+                                "timezone": "Asia/Ho_Chi_Minh",
+                                "id": "852710338577",
+                                "tickets_url": "https://www.eventbrite.com/checkout-external?eid=852710338577",
+                                "urgency_signals": {
+                                    "messages": [],
+                                    "categories": []
+                                },
+                                "tickets_by": "Eventbrite",
+                                "primary_organizer_id": "14657133729",
+                                "dedup": {
+                                    "count": 1,
+                                    "hash": ""
+                                },
+                                "num_children": 1,
+                                "debug_info": {},
+                                "parent_url": null,
+                                "hide_end_date": false,
+                                "start_date": "2024-06-03",
+                                "end_time": "17:00",
+                                "_type": "destination_event",
+                                "end_date": "2024-06-05",
+                                "tags": [
+                                    {
+                                        "prefix": "EventbriteSubCategory",
+                                        "tag": "EventbriteSubCategory/1002",
+                                        "display_name": "Finance"
+                                    },
+                                    {
+                                        "prefix": "EventbriteCategory",
+                                        "tag": "EventbriteCategory/101",
+                                        "display_name": "Business & Professional",
+                                        "localized": {
+                                            "display_name": "Business & Professional"
+                                        }
+                                    },
+                                    {
+                                        "prefix": "EventbriteFormat",
+                                        "tag": "EventbriteFormat/9",
+                                        "display_name": "Class, Training, or Workshop"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Business",
+                                        "display_name": "Business",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Financial",
+                                        "display_name": "Financial",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Corporate",
+                                        "display_name": "Corporate",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Security",
+                                        "display_name": "Security",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/Investigation",
+                                        "display_name": "Investigation",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/due_diligence",
+                                        "display_name": "due_diligence",
+                                        "prefix": "OrganizerTag"
+                                    },
+                                    {
+                                        "_type": "tag",
+                                        "tag": "OrganizerTag/data_analysis",
+                                        "display_name": "data_analysis",
+                                        "prefix": "OrganizerTag"
+                                    }
+                                ],
+                                "eventbrite_event_id": "852710338577",
+                                "start_time": "09:00",
+                                "primary_venue": {
+                                    "_type": "destination_venue",
+                                    "name": "Pullman Saigon Centre",
+                                    "venue_profile_id": null,
+                                    "address": {
+                                        "city": "Singapore",
+                                        "country": "VN",
+                                        "region": "Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh",
+                                        "longitude": "106.691666",
+                                        "localized_address_display": "148 \u0110\u01b0\u1eddng Tr\u1ea7n H\u01b0ng \u0110\u1ea1o, Singapore, Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh 070000",
+                                        "postal_code": "070000",
+                                        "address_1": "148 \u0110\u01b0\u1eddng Tr\u1ea7n H\u01b0ng \u0110\u1ea1o",
+                                        "address_2": "",
+                                        "latitude": "10.7643345",
+                                        "localized_multi_line_address_display": [
+                                            "148 \u0110\u01b0\u1eddng Tr\u1ea7n H\u01b0ng \u0110\u1ea1o",
+                                            "Singapore, Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh 070000"
+                                        ],
+                                        "localized_area_display": "Singapore, Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh"
+                                    },
+                                    "venue_profile_url": "",
+                                    "id": "200608599"
+                                },
+                                "full_description": null,
+                                "image_id": "708027069",
+                                "is_protected_event": false,
+                                "is_cancelled": null,
+                                "primary_venue_id": "200608599",
+                                "checkout_flow": "widget",
+                                "series_id": null,
+                                "name": "Due Diligence Masterclass",
+                                "language": "en-us",
+                                "url": "https://www.eventbrite.sg/e/due-diligence-masterclass-tickets-852710338577",
+                                "hide_start_date": false,
+                                "summary": "The course equips you with a comprehension of the various concepts and practices in due diligence. In today\u2019s world, principal decision-make",
+                                "is_online_event": false,
+                                "eid": "852710338577",
+                                "published": "2024-02-29T06:27:26Z"
+                            }
+                        ],
+                        "aggs": {
+                            "dates": {
+                                "buckets": [
+                                    {
+                                        "inflated": {
+                                            "from": "2024-05-21",
+                                            "display_name": "Today",
+                                            "localized": {
+                                                "display_name": "Today"
+                                            },
+                                            "key": "today",
+                                            "to": "2024-05-21"
+                                        },
+                                        "display_name": "Today",
+                                        "key": "today",
+                                        "doc_count": 12
+                                    },
+                                    {
+                                        "inflated": {
+                                            "from": "2024-05-22",
+                                            "display_name": "Tomorrow",
+                                            "localized": {
+                                                "display_name": "Tomorrow"
+                                            },
+                                            "key": "tomorrow",
+                                            "to": "2024-05-22"
+                                        },
+                                        "display_name": "Tomorrow",
+                                        "key": "tomorrow",
+                                        "doc_count": 20
+                                    },
+                                    {
+                                        "inflated": {
+                                            "from": "2024-05-24",
+                                            "display_name": "This weekend",
+                                            "localized": {
+                                                "display_name": "This weekend"
+                                            },
+                                            "key": "this_weekend",
+                                            "to": "2024-05-26"
+                                        },
+                                        "display_name": "This weekend",
+                                        "key": "this_weekend",
+                                        "doc_count": 17
+                                    },
+                                    {
+                                        "inflated": {
+                                            "from": "2024-05-19",
+                                            "display_name": "This week",
+                                            "localized": {
+                                                "display_name": "This week"
+                                            },
+                                            "key": "this_week",
+                                            "to": "2024-05-25"
+                                        },
+                                        "display_name": "This week",
+                                        "key": "this_week",
+                                        "doc_count": 26
+                                    },
+                                    {
+                                        "inflated": {
+                                            "from": "2024-05-19",
+                                            "display_name": "This month",
+                                            "localized": {
+                                                "display_name": "This month"
+                                            },
+                                            "key": "this_4_weeks",
+                                            "to": "2024-06-15"
+                                        },
+                                        "display_name": "This month",
+                                        "key": "this_4_weeks",
+                                        "doc_count": 42
+                                    },
+                                    {
+                                        "inflated": {
+                                            "from": "2024-05-21",
+                                            "display_name": "Future",
+                                            "localized": {
+                                                "display_name": "Future"
+                                            },
+                                            "key": "current_future",
+                                            "to": null
+                                        },
+                                        "display_name": "Future",
+                                        "key": "current_future",
+                                        "doc_count": 100
+                                    },
+                                    {
+                                        "inflated": {
+                                            "from": null,
+                                            "display_name": "Past",
+                                            "localized": {
+                                                "display_name": "Past"
+                                            },
+                                            "key": "past",
+                                            "to": "2024-05-20"
+                                        },
+                                        "display_name": "Past",
+                                        "key": "past",
+                                        "doc_count": 0
+                                    }
+                                ]
+                            },
+                            "organizertagsautocomplete_agg": {
+                                "buckets": [
+                                    {
+                                        "inflated": "business",
+                                        "display_name": "business",
+                                        "key": "business",
+                                        "doc_count": 34
+                                    },
+                                    {
+                                        "inflated": "corporate",
+                                        "display_name": "corporate",
+                                        "key": "corporate",
+                                        "doc_count": 17
+                                    },
+                                    {
+                                        "inflated": "management",
+                                        "display_name": "management",
+                                        "key": "management",
+                                        "doc_count": 16
+                                    },
+                                    {
+                                        "inflated": "investment",
+                                        "display_name": "investment",
+                                        "key": "investment",
+                                        "doc_count": 15
+                                    },
+                                    {
+                                        "inflated": "finance",
+                                        "display_name": "finance",
+                                        "key": "finance",
+                                        "doc_count": 13
+                                    },
+                                    {
+                                        "inflated": "financial",
+                                        "display_name": "financial",
+                                        "key": "financial",
+                                        "doc_count": 13
+                                    },
+                                    {
+                                        "inflated": "analysis",
+                                        "display_name": "analysis",
+                                        "key": "analysis",
+                                        "doc_count": 12
+                                    },
+                                    {
+                                        "inflated": "corporate_training",
+                                        "display_name": "corporate_training",
+                                        "key": "corporate_training",
+                                        "doc_count": 12
+                                    },
+                                    {
+                                        "inflated": "leadership",
+                                        "display_name": "leadership",
+                                        "key": "leadership",
+                                        "doc_count": 11
+                                    },
+                                    {
+                                        "inflated": "training_course",
+                                        "display_name": "training_course",
+                                        "key": "training_course",
+                                        "doc_count": 10
+                                    },
+                                    {
+                                        "inflated": "event",
+                                        "display_name": "event",
+                                        "key": "event",
+                                        "doc_count": 9
+                                    },
+                                    {
+                                        "inflated": "excel_course",
+                                        "display_name": "excel_course",
+                                        "key": "excel_course",
+                                        "doc_count": 9
+                                    },
+                                    {
+                                        "inflated": "excel_training",
+                                        "display_name": "excel_training",
+                                        "key": "excel_training",
+                                        "doc_count": 9
+                                    },
+                                    {
+                                        "inflated": "mentoring",
+                                        "display_name": "mentoring",
+                                        "key": "mentoring",
+                                        "doc_count": 9
+                                    },
+                                    {
+                                        "inflated": "vietnam",
+                                        "display_name": "vietnam",
+                                        "key": "vietnam",
+                                        "doc_count": 9
+                                    },
+                                    {
+                                        "inflated": "companies",
+                                        "display_name": "companies",
+                                        "key": "companies",
+                                        "doc_count": 8
+                                    },
+                                    {
+                                        "inflated": "corporate_finance",
+                                        "display_name": "corporate_finance",
+                                        "key": "corporate_finance",
+                                        "doc_count": 8
+                                    },
+                                    {
+                                        "inflated": "finance_training",
+                                        "display_name": "finance_training",
+                                        "key": "finance_training",
+                                        "doc_count": 8
+                                    },
+                                    {
+                                        "inflated": "venture_capital",
+                                        "display_name": "venture_capital",
+                                        "key": "venture_capital",
+                                        "doc_count": 8
+                                    },
+                                    {
+                                        "inflated": "coaching",
+                                        "display_name": "coaching",
+                                        "key": "coaching",
+                                        "doc_count": 7
+                                    },
+                                    {
+                                        "inflated": "strategy",
+                                        "display_name": "strategy",
+                                        "key": "strategy",
+                                        "doc_count": 6
+                                    },
+                                    {
+                                        "inflated": "capital_management",
+                                        "display_name": "capital_management",
+                                        "key": "capital_management",
+                                        "doc_count": 5
+                                    },
+                                    {
+                                        "inflated": "due_diligence",
+                                        "display_name": "due_diligence",
+                                        "key": "due_diligence",
+                                        "doc_count": 5
+                                    },
+                                    {
+                                        "inflated": "financial_management",
+                                        "display_name": "financial_management",
+                                        "key": "financial_management",
+                                        "doc_count": 5
+                                    },
+                                    {
+                                        "inflated": "manager",
+                                        "display_name": "manager",
+                                        "key": "manager",
+                                        "doc_count": 5
+                                    },
+                                    {
+                                        "inflated": "market",
+                                        "display_name": "market",
+                                        "key": "market",
+                                        "doc_count": 5
+                                    },
+                                    {
+                                        "inflated": "power",
+                                        "display_name": "power",
+                                        "key": "power",
+                                        "doc_count": 5
+                                    },
+                                    {
+                                        "inflated": "real_estate",
+                                        "display_name": "real_estate",
+                                        "key": "real_estate",
+                                        "doc_count": 5
+                                    },
+                                    {
+                                        "inflated": "real_estate_investing",
+                                        "display_name": "real_estate_investing",
+                                        "key": "real_estate_investing",
+                                        "doc_count": 5
+                                    },
+                                    {
+                                        "inflated": "values",
+                                        "display_name": "values",
+                                        "key": "values",
+                                        "doc_count": 5
+                                    },
+                                    {
+                                        "inflated": "balance",
+                                        "display_name": "balance",
+                                        "key": "balance",
+                                        "doc_count": 4
+                                    },
+                                    {
+                                        "inflated": "career",
+                                        "display_name": "career",
+                                        "key": "career",
+                                        "doc_count": 4
+                                    },
+                                    {
+                                        "inflated": "free",
+                                        "display_name": "free",
+                                        "key": "free",
+                                        "doc_count": 4
+                                    },
+                                    {
+                                        "inflated": "meditation",
+                                        "display_name": "meditation",
+                                        "key": "meditation",
+                                        "doc_count": 4
+                                    },
+                                    {
+                                        "inflated": "meditation_for_business",
+                                        "display_name": "meditation_for_business",
+                                        "key": "meditation_for_business",
+                                        "doc_count": 4
+                                    },
+                                    {
+                                        "inflated": "mindfulness",
+                                        "display_name": "mindfulness",
+                                        "key": "mindfulness",
+                                        "doc_count": 4
+                                    },
+                                    {
+                                        "inflated": "professional",
+                                        "display_name": "professional",
+                                        "key": "professional",
+                                        "doc_count": 4
+                                    },
+                                    {
+                                        "inflated": "startup",
+                                        "display_name": "startup",
+                                        "key": "startup",
+                                        "doc_count": 4
+                                    },
+                                    {
+                                        "inflated": "success",
+                                        "display_name": "success",
+                                        "key": "success",
+                                        "doc_count": 4
+                                    },
+                                    {
+                                        "inflated": "advanced_excel_class",
+                                        "display_name": "advanced_excel_class",
+                                        "key": "advanced_excel_class",
+                                        "doc_count": 3
+                                    },
+                                    {
+                                        "inflated": "australia",
+                                        "display_name": "australia",
+                                        "key": "australia",
+                                        "doc_count": 3
+                                    },
+                                    {
+                                        "inflated": "business_analysis",
+                                        "display_name": "business_analysis",
+                                        "key": "business_analysis",
+                                        "doc_count": 3
+                                    },
+                                    {
+                                        "inflated": "business_tools",
+                                        "display_name": "business_tools",
+                                        "key": "business_tools",
+                                        "doc_count": 3
+                                    },
+                                    {
+                                        "inflated": "capital",
+                                        "display_name": "capital",
+                                        "key": "capital",
+                                        "doc_count": 3
+                                    },
+                                    {
+                                        "inflated": "cash_flow",
+                                        "display_name": "cash_flow",
+                                        "key": "cash_flow",
+                                        "doc_count": 3
+                                    },
+                                    {
+                                        "inflated": "cashflow",
+                                        "display_name": "cashflow",
+                                        "key": "cashflow",
+                                        "doc_count": 3
+                                    },
+                                    {
+                                        "inflated": "change_management",
+                                        "display_name": "change_management",
+                                        "key": "change_management",
+                                        "doc_count": 3
+                                    },
+                                    {
+                                        "inflated": "finance_manager",
+                                        "display_name": "finance_manager",
+                                        "key": "finance_manager",
+                                        "doc_count": 3
+                                    },
+                                    {
+                                        "inflated": "financial_modeling",
+                                        "display_name": "financial_modeling",
+                                        "key": "financial_modeling",
+                                        "doc_count": 3
+                                    },
+                                    {
+                                        "inflated": "financial_statements",
+                                        "display_name": "financial_statements",
+                                        "key": "financial_statements",
+                                        "doc_count": 3
+                                    }
+                                ]
+                            },
+                            "tags": {
+                                "buckets": [
+                                    {
+                                        "inflated": {
+                                            "prefix": "EventbriteCategory",
+                                            "tag": "EventbriteCategory/101",
+                                            "display_name": "Business & Professional",
+                                            "localized": {
+                                                "display_name": "Business & Professional"
+                                            }
+                                        },
+                                        "display_name": "Business & Professional",
+                                        "key": "EventbriteCategory/101",
+                                        "doc_count": 100
+                                    },
+                                    {
+                                        "inflated": {
+                                            "prefix": "EventbriteFormat",
+                                            "tag": "EventbriteFormat/9",
+                                            "display_name": "Class, Training, or Workshop"
+                                        },
+                                        "display_name": "Class, Training, or Workshop",
+                                        "key": "EventbriteFormat/9",
+                                        "doc_count": 74
+                                    },
+                                    {
+                                        "inflated": {
+                                            "prefix": "EventbriteSubCategory",
+                                            "tag": "EventbriteSubCategory/1002",
+                                            "display_name": "Finance"
+                                        },
+                                        "display_name": "Finance",
+                                        "key": "EventbriteSubCategory/1002",
+                                        "doc_count": 43
+                                    },
+                                    {
+                                        "inflated": {
+                                            "prefix": "EventbriteSubCategory",
+                                            "tag": "EventbriteSubCategory/1010",
+                                            "display_name": "Career"
+                                        },
+                                        "display_name": "Career",
+                                        "key": "EventbriteSubCategory/1010",
+                                        "doc_count": 19
+                                    },
+                                    {
+                                        "inflated": {
+                                            "prefix": "EventbriteSubCategory",
+                                            "tag": "EventbriteSubCategory/1001",
+                                            "display_name": "Startups & Small Business"
+                                        },
+                                        "display_name": "Startups & Small Business",
+                                        "key": "EventbriteSubCategory/1001",
+                                        "doc_count": 10
+                                    },
+                                    {
+                                        "inflated": {
+                                            "prefix": "EventbriteFormat",
+                                            "tag": "EventbriteFormat/3",
+                                            "display_name": "Tradeshow, Consumer Show, or Expo"
+                                        },
+                                        "display_name": "Tradeshow, Consumer Show, or Expo",
+                                        "key": "EventbriteFormat/3",
+                                        "doc_count": 9
+                                    },
+                                    {
+                                        "inflated": {
+                                            "prefix": "EventbriteFormat",
+                                            "tag": "EventbriteFormat/10",
+                                            "display_name": "Meeting or Networking Event"
+                                        },
+                                        "display_name": "Meeting or Networking Event",
+                                        "key": "EventbriteFormat/10",
+                                        "doc_count": 7
+                                    },
+                                    {
+                                        "inflated": {
+                                            "prefix": "EventbriteSubCategory",
+                                            "tag": "EventbriteSubCategory/1007",
+                                            "display_name": "Sales & Marketing"
+                                        },
+                                        "display_name": "Sales & Marketing",
+                                        "key": "EventbriteSubCategory/1007",
+                                        "doc_count": 6
+                                    },
+                                    {
+                                        "inflated": {
+                                            "prefix": "EventbriteSubCategory",
+                                            "tag": "EventbriteSubCategory/1011",
+                                            "display_name": "Investment"
+                                        },
+                                        "display_name": "Investment",
+                                        "key": "EventbriteSubCategory/1011",
+                                        "doc_count": 6
+                                    },
+                                    {
+                                        "inflated": {
+                                            "prefix": "EventbriteSubCategory",
+                                            "tag": "EventbriteSubCategory/1999",
+                                            "display_name": "Other"
+                                        },
+                                        "display_name": "Other",
+                                        "key": "EventbriteSubCategory/1999",
+                                        "doc_count": 5
+                                    },
+                                    {
+                                        "inflated": {
+                                            "prefix": "EventbriteFormat",
+                                            "tag": "EventbriteFormat/2",
+                                            "display_name": "Seminar or Talk"
+                                        },
+                                        "display_name": "Seminar or Talk",
+                                        "key": "EventbriteFormat/2",
+                                        "doc_count": 4
+                                    },
+                                    {
+                                        "inflated": {
+                                            "prefix": "EventbriteSubCategory",
+                                            "tag": "EventbriteSubCategory/1005",
+                                            "display_name": "Real Estate"
+                                        },
+                                        "display_name": "Real Estate",
+                                        "key": "EventbriteSubCategory/1005",
+                                        "doc_count": 4
+                                    },
+                                    {
+                                        "inflated": {
+                                            "prefix": "EventbriteFormat",
+                                            "tag": "EventbriteFormat/1",
+                                            "display_name": "Conference"
+                                        },
+                                        "display_name": "Conference",
+                                        "key": "EventbriteFormat/1",
+                                        "doc_count": 3
+                                    },
+                                    {
+                                        "inflated": {
+                                            "prefix": "EventbriteFormat",
+                                            "tag": "EventbriteFormat/11",
+                                            "display_name": "Party or Social Gathering"
+                                        },
+                                        "display_name": "Party or Social Gathering",
+                                        "key": "EventbriteFormat/11",
+                                        "doc_count": 1
+                                    },
+                                    {
+                                        "inflated": {
+                                            "prefix": "EventbriteFormat",
+                                            "tag": "EventbriteFormat/5",
+                                            "display_name": "Festival or Fair"
+                                        },
+                                        "display_name": "Festival or Fair",
+                                        "key": "EventbriteFormat/5",
+                                        "doc_count": 1
+                                    },
+                                    {
+                                        "inflated": {
+                                            "prefix": "EventbriteSubCategory",
+                                            "tag": "EventbriteSubCategory/1003",
+                                            "display_name": "Environment & Sustainability"
+                                        },
+                                        "display_name": "Environment & Sustainability",
+                                        "key": "EventbriteSubCategory/1003",
+                                        "doc_count": 1
+                                    }
+                                ]
+                            }
+                        },
+                        "promoted_results": []
+                    },
+                    "is_staff": false,
+                    "suggested_categories": [
+                        {
+                            "type": "category",
+                            "name": "nightlife",
+                            "id": "Destination/nightlife"
+                        },
+                        {
+                            "type": "subcategory",
+                            "name": "new years eve",
+                            "id": "EventbriteSubCategory/16009"
+                        },
+                        {
+                            "type": "category",
+                            "name": "music",
+                            "id": "EventbriteCategory/103"
+                        },
+                        {
+                            "type": "category",
+                            "name": "food & drink",
+                            "id": "EventbriteCategory/110"
+                        },
+                        {
+                            "type": "category",
+                            "name": "film, media & entertainment",
+                            "id": "EventbriteCategory/104"
+                        },
+                        {
+                            "type": "category",
+                            "name": "performing & visual arts",
+                            "id": "EventbriteCategory/105"
+                        }
+                    ],
+                    "search_id": "32808a94172411ef932d0a529ccb6648",
+                    "es": [],
+                    "event_search": {
+                        "places": [
+                            "85632763"
+                        ],
+                        "dates": "current_future",
+                        "aggs": {
+                            "dates": {},
+                            "organizertagsautocomplete_agg": {
+                                "size": 50
+                            },
+                            "tags": {
+                                "size": 50
+                            }
+                        },
+                        "page_size": 8,
+                        "tags": [
+                            "EventbriteCategory/101"
+                        ]
+                    }
+                },
+                "fetchFailureCount": 0
+            },
+            "queryHash": [
+                "category-browse",
+                "events",
+                "EventbriteCategory/101",
+                "85632763",
+                {
+                    "aggs": {
+                        "dates": {},
+                        "organizertagsautocomplete_agg": {
+                            "size": 50
+                        },
+                        "tags": {
+                            "size": 50
+                        }
+                    },
+                    "dates": [
+                        "current_future"
+                    ],
+                    "exclude": {
+                        "ids": []
+                    },
+                    "page_size": 8,
+                    "places": [
+                        "85632763"
+                    ],
+                    "tags": [
+                        "EventbriteCategory/101"
+                    ]
+                }
+            ]
+        }
+    ]
+}

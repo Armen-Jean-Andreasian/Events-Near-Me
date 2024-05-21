@@ -2,7 +2,6 @@ from src.tools.url_scraper.url_params import *
 from src.tools.helpers import save_file, save_json_file
 from src.web_source_one import SourceOneHtmlAnalyzer, SourceOneScrapHTML
 from config import Config
-import asyncio
 
 
 class EventsApp:
@@ -26,26 +25,17 @@ class EventsApp:
                                                                    custom_event_name=custom_event_name,
                                                                    fixed_date=fixed_date,
                                                                    custom_date=custom_date)
+        if save_raw_html:
+            save_file(content=source_one_html_code, path=self.config.raw_html_file_name)
+            print(f"HTML content was saved to {self.config.raw_html_file_name} successfully")
 
         server_data_json, react_query_json = SourceOneHtmlAnalyzer.parse_html(html_code=source_one_html_code)
-        asyncio.run(self._save_jsons(server_data_json, react_query_json))
 
-        if save_raw_html:
-            self._save_raw_html(html_content=source_one_html_code)
-
-
-
-    def _save_raw_html(self, html_content: str):
-        asyncio.run(save_file(content=html_content, path=self.config.raw_html_file_name))
-        print(f"HTML content was saved to {self.config.raw_html_file_name} successfully")
-
-    async def _save_jsons(self, server_data_json: dict, react_query_json: dict, html_content: str = None):
-        await asyncio.gather(
-            save_json_file(content=server_data_json, path=self.config.server_data_json_filename),
-            save_json_file(content=react_query_json, path=self.config.react_query_json_file_name)
-        )
+        save_json_file(content=server_data_json, path=self.config.server_data_json_filename)
+        save_json_file(content=react_query_json, path=self.config.react_query_json_file_name)
         print(f"Jsons were saved to {self.config.react_query_json_file_name} and "
               f"{self.config.server_data_json_filename}")
+
 
 
 if __name__ == "__main__":
