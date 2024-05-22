@@ -26,8 +26,8 @@ def str_to_json(json_str_data: str) -> dict:
     If fails prints details on the char failed the serialization"""
 
     def print_error_location(json_string, error_position):
-        start_index = max(0, error_position - 10)
-        end_index = min(len(json_string), error_position + 10)
+        start_index = max(0, error_position - 30)
+        end_index = min(len(json_string), error_position + 30)
         problematic_substring = json_string[start_index:end_index]
         print("Problematic substring:", problematic_substring)
 

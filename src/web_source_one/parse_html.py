@@ -51,24 +51,41 @@ class SourceOneHtmlAnalyzer(AbsHtmlAnalyzer):
         return clean_text
 
     @classmethod
-    def _extract_json(cls, json_str: str) -> tuple[dict, dict]:
-        """Extracts the json from the str HTML, fixes the broken parts of it and returns a tuple of two dicts"""
+    def _extract_json(cls, json_str: str) -> tuple[dict]:
+        """Extracts the json from the str HTML, fixes the broken parts of it and returns a tuple of one dict"""
         content = json_str.split('REACT_QUERY_STATE = ')
 
-        server_data_json: str = content[0].split('SERVER_DATA = ')[1].strip()
+        # server_data_json: str = content[0].split('SERVER_DATA = ')[1].strip()
+
+        # breaking news: we don't need server data, yet
         react_query_state_json: str = content[1].strip()
 
-        react_query_state_json_issue1 = str('"queryHash":"["')
-        react_query_state_json_issue1_fix = str('"queryHash":["')
+        def fix_issue(issue, fix):
+            nonlocal react_query_state_json
 
-        react_query_state_json_issue2 = str(']}]"}]}')
-        react_query_state_json_issue2_fix = str(']}]}]}')
+            if issue in react_query_state_json:
+                react_query_state_json = react_query_state_json.replace(issue, fix)
 
-        if react_query_state_json_issue1 in react_query_state_json:
-            react_query_state_json = react_query_state_json.replace(react_query_state_json_issue1,
-                                                                    react_query_state_json_issue1_fix)
-        if react_query_state_json_issue2 in react_query_state_json:
-            react_query_state_json = react_query_state_json.replace(react_query_state_json_issue2,
-                                                                    react_query_state_json_issue2_fix)
+        issue_fix1 = str('"queryHash":"["'),  str('"queryHash":["')
+        issue_fix2 = str(']}]"}]}'), str(']}]}]}')
+        issue_fix3 = str('""'),  str('"'),
+        issue_fix4 = str(':","'),  str(':"')
+        issue_fix5 = str('":"}'),  str('":""}')
+        issue_fix6 = str('"hash":"tags":[],'),  str('')
+        issue_fix7 = str('"experiences":[]'),  str('[]')
 
-        return str_to_json(server_data_json), str_to_json(react_query_state_json)
+
+        issues_and_fixes = [
+            issue_fix1,
+            issue_fix2,
+            issue_fix3,
+            issue_fix4,
+            issue_fix5,
+            #issue_fix6
+        ]
+
+        for issue, fix in issues_and_fixes:
+            fix_issue(issue, fix)
+
+        # return str_to_json(server_data_json), str_to_json(react_query_state_json)
+        return str_to_json(react_query_state_json)

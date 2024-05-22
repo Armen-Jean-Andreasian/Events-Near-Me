@@ -1,1 +1,1 @@
-from .html_analyzer_abs import AbsHtmlAnalyzer
+from .html_parser_abs import AbsHtmlAnalyzer
