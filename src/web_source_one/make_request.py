@@ -1,17 +1,11 @@
-from src.tools.helpers import retrieve_dotenv
 from src.tools.url_scraper import RequestHeaders
 from src.tools.url_scraper.url_params import *
 from src.tools.url_scraper.get_url_sync import UrlScraperSync
 
 
 class SourceOneScrapHTML:
-    dotenv_url_key = "SOURCE_ONE_URL"
-    dotenv_cookies_key = "SOURCE_ONE_COOKIE"
-
-    def __init__(self, dotenv_path: str):
-        self.api_base_url = retrieve_dotenv(key=self.dotenv_url_key, dotenv_path=dotenv_path)
-
-        cookies = retrieve_dotenv(key=self.dotenv_cookies_key, dotenv_path=dotenv_path)
+    def __init__(self, cookies: dict, api_base_url: str):
+        self.api_base_url = api_base_url
         self.request_headers = RequestHeaders(cookies=cookies).headers
 
     def find_events(

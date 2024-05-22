@@ -1,18 +1,14 @@
+import os
+
+
 class Config:
-    # server_data_json_file_name: str = "results/server-data.json"
-    react_query_json_file_name: str = "results/react-query-state.json"
-    raw_html_file_name: str = "results/raw_html.html"
+    results_folder = 'results'
 
-    # @property
-    # def server_data_json_filename(self):
-    #     return self.server_data_json_file_name
+    server_data_json_filepath = os.path.join(results_folder, "server_data.json")
+    server_data_dict_key = 'server_data'
 
-    @property
-    def react_query_json_filename(self):
-        return self.react_query_json_file_name
+    react_query_json_filename = os.path.join(results_folder, "react_query_state.json")
+    react_query_dict_key = 'react_query_state'
 
-
-    @property
-    def raw_html_filename(self):
-        return self.raw_html_file_name
-
+    raw_html_filename = os.path.join(results_folder, "raw.html")
+    clear_html_filename = os.path.join(results_folder, "clear.html")

@@ -1,26 +1,30 @@
+import json
 import re
-from src.tools.helpers import str_to_json
 from src.tools.html_parser import AbsHtmlAnalyzer
+from config import Config
 
 
 class SourceOneHtmlAnalyzer(AbsHtmlAnalyzer):
-    @classmethod
-    def parse_html(cls, html_code: str) -> tuple[dict, dict]:
+    def __init__(self, html_source: str):
+        self.html_source = html_source
+        self.script_tag_html_raw = None
+        self.script_tag_html_pure = None
+
+    def parse_html(self) -> str:
         """
+        Detects the block with JSON contents.
+
         Scraps the url and gets the HTML code,
         Removes the HTML-specific leftover symbols,
-        Extracts the json data out of HTML code, checks if it's broken and fixes,
-        Saves them to two json files
+        Returns the clear HTML block containing the JSONS
         """
 
-        script_html_content: str = cls._detect_script_part(html_code)
+        self.script_tag_html_raw: str = self._detect_script_part(self.html_source)
+        self.script_tag_html_pure: str = self._trim_html_leftovers(self.script_tag_html_raw)
+        return self.script_tag_html_pure
 
-        pure_script_content: str = cls._trim_html_tags(script_html_content)
-
-        return cls._extract_json(json_str=pure_script_content)
-
-    @classmethod
-    def _detect_script_part(cls, html_code):
+    @staticmethod
+    def _detect_script_part(html_source: str):
         """ As the json is located inside the  script tag, this method detects the content of it."""
         script_pattern = re.compile(
             r'<script type="text/javascript">\s*'
@@ -31,18 +35,19 @@ class SourceOneHtmlAnalyzer(AbsHtmlAnalyzer):
             r'(.*?)'
             r'</script>', re.DOTALL
         )
-        script_match = script_pattern.search(html_code)
+        script_match = script_pattern.search(html_source)
 
         if script_match:
-            return script_match.group(0)  # Full <script> tag content
+            script_tag_html_raw = script_match.group(0)  # Full <script> tag content
+            return script_tag_html_raw
         else:
             print("Failed to find the specified <script> tag content in the HTML.")
             exit()
 
-    @classmethod
-    def _trim_html_tags(cls, html_code: str) -> str:
+    @staticmethod
+    def _trim_html_leftovers(script_tag_html: str) -> str:
         """Removes the unnecessary data from the HTML code containing json data and returns it as string"""
-        content = html_code[290:]
+        content = script_tag_html[290:]
         clean_text = re.sub(r'<[^>]+>', '', content)
         clean_text = clean_text.strip()
         clean_text = clean_text.replace('};', '}')
@@ -50,42 +55,50 @@ class SourceOneHtmlAnalyzer(AbsHtmlAnalyzer):
         clean_text = clean_text.replace('window.__REACT_QUERY_STATE__', 'REACT_QUERY_STATE', 1)
         return clean_text
 
-    @classmethod
-    def _extract_json(cls, json_str: str) -> tuple[dict]:
-        """Extracts the json from the str HTML, fixes the broken parts of it and returns a tuple of one dict"""
-        content = json_str.split('REACT_QUERY_STATE = ')
+    def extract_json_from_html(
+            self,
+            json_str: str,
+            use_server_data: bool = False,
+            use_react_query_state: bool = False
+    ) -> dict[dict]:
+        """
+        Extracts the jsons from the str HTML, fixes the broken parts of it and returns a list of string json objects.
+        """
+        result = dict()
 
-        # server_data_json: str = content[0].split('SERVER_DATA = ')[1].strip()
+        if use_server_data:
+            server_data_pattern = re.compile(r'SERVER_DATA\s*=\s*(\{.*?\})\s{47}', re.DOTALL)
+            server_data_match = server_data_pattern.search(json_str)
 
-        # breaking news: we don't need server data, yet
-        react_query_state_json: str = content[1].strip()
+            if server_data_match:
+                server_data_str = server_data_match.group(1)
+                server_data_json = json.loads(server_data_str)
+                result[Config.server_data_dict_key] = server_data_json
 
-        def fix_issue(issue, fix):
-            nonlocal react_query_state_json
+        if use_react_query_state:
+            react_query_state_pattern = re.compile(r'REACT_QUERY_STATE\s*=\s*(\{.*?\})', re.DOTALL)
+            react_query_state_match = react_query_state_pattern.search(json_str)
 
-            if issue in react_query_state_json:
-                react_query_state_json = react_query_state_json.replace(issue, fix)
+            if react_query_state_match:
+                react_query_state_str = self.find_match(pattern=react_query_state_pattern, data=json_str)
 
-        issue_fix1 = str('"queryHash":"["'),  str('"queryHash":["')
-        issue_fix2 = str(']}]"}]}'), str(']}]}]}')
-        issue_fix3 = str('""'),  str('"'),
-        issue_fix4 = str(':","'),  str(':"')
-        issue_fix5 = str('":"}'),  str('":""}')
-        issue_fix6 = str('"hash":"tags":[],'),  str('')
-        issue_fix7 = str('"experiences":[]'),  str('[]')
+                try:
+                    react_query_state_json = json.loads(react_query_state_str)
+                    result[Config.react_query_dict_key] = react_query_state_json
 
+                except json.decoder.JSONDecodeError as e:
+                    print(f"Failed to fetch react query state due to {str(e)}")
 
-        issues_and_fixes = [
-            issue_fix1,
-            issue_fix2,
-            issue_fix3,
-            issue_fix4,
-            issue_fix5,
-            #issue_fix6
-        ]
+        return result
 
-        for issue, fix in issues_and_fixes:
-            fix_issue(issue, fix)
+    @property
+    def source_code(self):
+        return self.html_source
 
-        # return str_to_json(server_data_json), str_to_json(react_query_state_json)
-        return str_to_json(react_query_state_json)
+    @property
+    def tag_html_raw(self):
+        return self.script_tag_html_raw
+
+    @property
+    def tag_html_clear(self):
+        return self.script_tag_html_pure
