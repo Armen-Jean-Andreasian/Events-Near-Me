@@ -1,0 +1,11 @@
+Was ist das?!?!? [TRIGGERED]
+
+Such division of code makes it more modular, easier to maintain, test and use.
+Btw, encapsulation is not just a term with sh**ty definition, allowing to lie "OOP is hard", but also something to follow.
+
+----
+
+SO:
+    All dependencies are imported into __init__.py and the main application logic is stored in app.py.
+    The main.py file is used to run the application and has a clean and straightforward structure.
+    My project my rules

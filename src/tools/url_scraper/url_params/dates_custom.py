@@ -17,8 +17,8 @@ class CustomDate:
         return super().__new__(cls)
 
     def __init__(self, start_date: YYYYMMDDDate, end_date: YYYYMMDDDate):
-        self._start_date = start_date
-        self._end_date = end_date
+        self._start_date = start_date.date
+        self._end_date = end_date.date
 
     @property
     def date(self):
