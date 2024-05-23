@@ -40,7 +40,7 @@ class SourceOneJsonParser:
             except KeyError:
                 # It Was At This Moment We Knew... We ****ed Up
                 raise Exception("If you see this for the first time, it may mean that no events found."
-                                "If not the Json structure of react_query_json has been changed.")
+                                "If not the Json structure of server_data has been changed.")
 
             else:
                 return server_data_results
