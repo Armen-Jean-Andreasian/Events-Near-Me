@@ -1,10 +1,10 @@
 from app import *
 
-location = Location("Vietnam")
-entrance_fee = PaidEntrance()
-event_category = BusinessCategory()
-event_name = None # "Pool Party"
-fixed_date = Tomorrow()
+location = Location("France")
+entrance_fee = None #PaidEntrance()
+event_category = None # BusinessCategory()
+event_name = None #"Pool Party"  # if given  => server_data.get('search_data').get('events')
+fixed_date = None  # Tomorrow()
 
 custom_date_start = YYYYMMDDDate(year=2024, month=6, date=7)
 custom_date_end = YYYYMMDDDate(year=2025, month=1, date=5)
@@ -14,7 +14,7 @@ save_raw_html = True
 save_clear_html = True
 
 use_server_data = True
-#use_react_query_state = True
+use_react_query_state = True
 
 events_app = EventsApp()
 
@@ -28,6 +28,6 @@ events = events_app.find_events(
     save_raw_html=save_raw_html,
     save_clear_html=save_clear_html,
     use_server_data=use_server_data,
-    #use_react_query_state=use_react_query_state
+    # use_react_query_state=use_react_query_state
 )
 print(events)

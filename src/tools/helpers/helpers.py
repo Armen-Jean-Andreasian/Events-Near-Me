@@ -38,3 +38,11 @@ def str_to_json(json_str_data: str) -> dict:
         print_error_location(json_str_data, e.pos)
     else:
         return json_data
+
+
+class TestingSkillIssueError(Exception):
+    def __init__(self, message: str):
+        self.message = message
+
+    def __str__(self):
+        return self.message

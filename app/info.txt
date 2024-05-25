@@ -1,4 +1,4 @@
-Was ist das?!?!? [TRIGGERED]
+Was ist das?!?!?
 
 Such division of code makes it more modular, easier to maintain, test and use.
 Btw, encapsulation is not just a term with sh**ty definition, allowing to lie "OOP is hard", but also something to follow.

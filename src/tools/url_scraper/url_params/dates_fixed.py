@@ -25,14 +25,23 @@ class Today(FixedDate):
     def when(self) -> str:
         return self._dates['today']
 
+    def __str__(self):
+        return "Today"
+
 
 class Tomorrow(FixedDate):
     @property
     def when(self) -> str:
         return self._dates['tomorrow']
 
+    def __str__(self):
+        return "Tomorrow"
+
 
 class ThisWeekend(FixedDate):
     @property
     def when(self) -> str:
         return self._dates['this-weekend']
+
+    def __str__(self):
+        return "This Weekend"

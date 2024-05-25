@@ -14,13 +14,18 @@ class EntranceFee:
 
 
 class FreeEntrance(EntranceFee):
-
     @property
     def fee(self):
         return self._fees.get('free')
+
+    def __str__(self):
+        return 'Free'
 
 
 class PaidEntrance(EntranceFee):
     @property
     def fee(self):
         return self._fees.get('paid')
+
+    def __str__(self):
+        return 'Paid'

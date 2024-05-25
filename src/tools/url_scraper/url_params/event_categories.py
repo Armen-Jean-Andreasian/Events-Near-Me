@@ -16,3 +16,6 @@ class BusinessCategory(Category):
     @property
     def category(self) -> str:
         return self._categories.get("business")
+
+    def __str__(self):
+        return "Business"

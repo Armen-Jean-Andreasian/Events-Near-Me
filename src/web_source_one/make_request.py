@@ -1,6 +1,10 @@
 from src.tools.url_scraper import RequestHeaders
 from src.tools.url_scraper.url_params import *
 from src.tools.url_scraper.get_url_sync import UrlScraperSync
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from src.tools.models import ResponseModel
 
 
 class SourceOneScrapHTML:
@@ -17,7 +21,7 @@ class SourceOneScrapHTML:
             custom_event_name: str = None,
             fixed_date: FixedDate = None,
             custom_date: CustomDate = None
-    ):
+    ) -> "ResponseModel":
 
         url_generator_obj = UrlGenerator(base_url=self.api_base_url,
                                          location=location,
@@ -29,6 +33,4 @@ class SourceOneScrapHTML:
 
         url = url_generator_obj.url
         print(url)
-        html_code = UrlScraperSync.make_request(url=url, headers=self.request_headers)
-
-        return html_code
+        return UrlScraperSync.make_request(url=url, headers=self.request_headers)

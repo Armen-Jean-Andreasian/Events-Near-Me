@@ -2,6 +2,7 @@ import json
 import re
 from src.tools.html_parser import AbsHtmlAnalyzer
 from config import Config
+from json_repair import repair_json
 
 
 class SourceOneHtmlAnalyzer(AbsHtmlAnalyzer):
@@ -64,7 +65,14 @@ class SourceOneHtmlAnalyzer(AbsHtmlAnalyzer):
         """
         Extracts the jsons from the str HTML, fixes the broken parts of it and returns a list of string json objects.
         """
-        result = dict()
+        result = {}
+
+        def repair_and_load_json(json_str: str) -> dict:
+            try:
+                return json.loads(json_str)
+            except json.JSONDecodeError:
+                repaired_json_str = repair_json(json_str)
+                return json.loads(repaired_json_str)
 
         if use_server_data:
             server_data_pattern = re.compile(r'SERVER_DATA\s*=\s*(\{.*?\})\s{47}', re.DOTALL)
@@ -72,7 +80,7 @@ class SourceOneHtmlAnalyzer(AbsHtmlAnalyzer):
 
             if server_data_match:
                 server_data_str = server_data_match.group(1)
-                server_data_json = json.loads(server_data_str)
+                server_data_json = repair_and_load_json(server_data_str)
                 result[Config.server_data_dict_key] = server_data_json
 
         if use_react_query_state:
@@ -80,14 +88,9 @@ class SourceOneHtmlAnalyzer(AbsHtmlAnalyzer):
             react_query_state_match = react_query_state_pattern.search(json_str)
 
             if react_query_state_match:
-                react_query_state_str = self.find_match(pattern=react_query_state_pattern, data=json_str)
-
-                try:
-                    react_query_state_json = json.loads(react_query_state_str)
-                    result[Config.react_query_dict_key] = react_query_state_json
-
-                except json.decoder.JSONDecodeError as e:
-                    print(f"Failed to fetch react query state due to {str(e)}")
+                react_query_state_str = react_query_state_match.group(1)
+                react_query_state_json = repair_and_load_json(react_query_state_str)
+                result[Config.react_query_dict_key] = react_query_state_json
 
         return result
 

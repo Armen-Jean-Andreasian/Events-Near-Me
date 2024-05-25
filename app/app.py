@@ -6,6 +6,8 @@ from src.tools.helpers import save_json_file
 from src.web_source_one import SourceOneHtmlAnalyzer
 from src.web_source_one import SourceOneScrapHTML
 from src.web_source_one import SourceOneJsonParser
+# from src.web_source_one import SourceOneJsonParserWithoutCustomEvent
+from src.tools.models.response_model import ResponseModel
 
 
 class EventsApp:
@@ -28,42 +30,48 @@ class EventsApp:
             save_clear_html: bool = False,
             use_server_data: bool = True,
             # use_react_query_state: bool = False,
-    ) -> list[dict] | None:
+    ) -> dict | None:
 
         source_one_html_scraper = SourceOneScrapHTML(api_base_url=self.api_base_url, cookies=self.__cookies)
 
-        source_one_html_code = source_one_html_scraper.find_events(
-            location=location, entrance_fee=entrance_fee, event_category=event_category,
-            custom_event_name=custom_event_name, fixed_date=fixed_date, custom_date=custom_date)
+        scraper_response: ResponseModel = source_one_html_scraper.find_events(
+            location, entrance_fee, event_category, custom_event_name, fixed_date, custom_date)
 
-        if save_raw_html:
-            save_file(content=source_one_html_code, path=Config.raw_html_filename)
-            print(f"HTML content was saved to {Config.raw_html_filename} successfully")
+        if scraper_response.status != "success":
+            print(scraper_response.to_dict)
+            exit()
+        else:
+            source_one_html_code: str = scraper_response.data
 
-        html_analyzer = SourceOneHtmlAnalyzer(html_source=source_one_html_code)
-        clear_html: str = html_analyzer.parse_html()
+            if save_raw_html:
+                save_file(content=source_one_html_code, path=Config.raw_html_filename)
+                print(f"HTML content was saved to {Config.raw_html_filename} successfully")
 
-        if save_clear_html:
-            save_file(content=clear_html, path=Config.clear_html_filename)
-            print(f"HTML content was saved to {Config.clear_html_filename} successfully")
+            html_analyzer = SourceOneHtmlAnalyzer(html_source=source_one_html_code)
+            clear_html: str = html_analyzer.parse_html()
 
-        jsons_found: dict[dict] = html_analyzer.extract_json_from_html(
-            json_str=clear_html,
-            use_server_data=use_server_data,
-            # use_react_query_state=use_react_query_state
-        )
+            jsons_found: dict[dict] = html_analyzer.extract_json_from_html(
+                json_str=clear_html,
+                use_server_data=use_server_data,
+                # use_react_query_state=use_react_query_state
+            )
 
-        server_data = jsons_found.get(Config.server_data_dict_key)
+            if save_clear_html:
+                save_file(content=clear_html, path=Config.clear_html_filename)
 
-        save_json_file(content=server_data, path=Config.server_data_json_filepath)
-        print(f"Json was saved to {Config.server_data_json_filepath} ")
+            server_data = jsons_found.get(Config.server_data_dict_key)
 
-        events: list[dict] = SourceOneJsonParser.parse_server_data(server_data)
+            save_json_file(content=server_data, path=Config.server_data_json_filepath)
+            print(f"Json was saved to {Config.server_data_json_filepath} ")
 
-        # elif use_react_query_state:  # the server returns a broken json
-        #     import warnings
-        #     warnings.warn('True was given to use_react_query_state. The server may return a broken json.')
-        #     save_json_file(content=jsons_found.get(Config.react_query_dict_key), path=Config.react_query_json_filename)
-        #     print(f"Json was saved to {Config.react_query_json_filename} ")
+            result = SourceOneJsonParser.parse_server_data(server_data)
 
-        return events
+            # if use_react_query_state:
+            #     react_query_state = data_dict.get(Config.react_query_dict_key)
+            #     self.save_json(content=react_query_state, path=Config.react_query_json_filepath)
+
+            return ResponseModel(
+                status="success",
+                status_code=200,
+                data=result
+            )
