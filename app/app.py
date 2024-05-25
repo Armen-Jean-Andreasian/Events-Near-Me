@@ -4,7 +4,8 @@ from src.tools.helpers import retrieve_dotenv
 from src.tools.helpers import save_file
 from src.tools.helpers import save_json_file
 from src.web_source_one import SourceOneHtmlAnalyzer
-from src.web_source_one import SourceOneScrapHTML
+from src.web_source_one import SourceOneHtmlScraperSync
+# from src.web_source_one import SourceOneHtmlScraperAsync
 from src.web_source_one import SourceOneJsonParser
 # from src.web_source_one import SourceOneJsonParserWithoutCustomEvent
 from src.tools.models.response_model import ResponseModel
@@ -32,10 +33,13 @@ class EventsApp:
             # use_react_query_state: bool = False,
     ) -> dict | None:
 
-        source_one_html_scraper = SourceOneScrapHTML(api_base_url=self.api_base_url, cookies=self.__cookies)
+        source_one_html_scraper = SourceOneHtmlScraperSync(api_base_url=self.api_base_url, cookies=self.__cookies)
 
         scraper_response: ResponseModel = source_one_html_scraper.find_events(
             location, entrance_fee, event_category, custom_event_name, fixed_date, custom_date)
+
+        print(scraper_response)
+
 
         if scraper_response.status != "success":
             print(scraper_response.to_dict)
