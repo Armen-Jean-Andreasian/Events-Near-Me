@@ -5,7 +5,7 @@ from src.tools.helpers import save_file
 from src.tools.helpers import save_json_file
 from src.web_source_one import SourceOneHtmlAnalyzer
 from src.web_source_one import SourceOneHtmlScraperSync
-# from src.web_source_one import SourceOneHtmlScraperAsync
+from src.web_source_one import SourceOneHtmlScraperAsync
 from src.web_source_one import SourceOneJsonParser
 # from src.web_source_one import SourceOneJsonParserWithoutCustomEvent
 from src.tools.models.response_model import ResponseModel
@@ -33,24 +33,21 @@ class EventsApp:
             # use_react_query_state: bool = False,
     ) -> dict | None:
 
-        source_one_html_scraper = SourceOneHtmlScraperSync(api_base_url=self.api_base_url, cookies=self.__cookies)
+        source_one_html_scraper = SourceOneHtmlScraperAsync(api_base_url=self.api_base_url, cookies=self.__cookies)
 
         scraper_response: ResponseModel = source_one_html_scraper.find_events(
             location, entrance_fee, event_category, custom_event_name, fixed_date, custom_date)
 
-        print(scraper_response)
+        source_one_html_code: str = scraper_response.data
 
+        if save_raw_html:
+            save_file(content=source_one_html_code, path=Config.raw_html_filename)
+            print(f"HTML content was saved to {Config.raw_html_filename} successfully")
 
         if scraper_response.status != "success":
-            print(scraper_response.to_dict)
+            print(scraper_response.model_dump())
             exit()
         else:
-            source_one_html_code: str = scraper_response.data
-
-            if save_raw_html:
-                save_file(content=source_one_html_code, path=Config.raw_html_filename)
-                print(f"HTML content was saved to {Config.raw_html_filename} successfully")
-
             html_analyzer = SourceOneHtmlAnalyzer(html_source=source_one_html_code)
             clear_html: str = html_analyzer.parse_html()
 

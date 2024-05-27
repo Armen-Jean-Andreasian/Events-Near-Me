@@ -15,8 +15,3 @@ class ResponseModel(BaseModel):
     description: str | None = None  # "Task not found"
     data: Any | None = None
     message: str | None = None  # "Consider creating a task"
-
-    @property
-    def to_dict(self) -> dict:
-        """Equivalent to model_dump"""
-        return self.model_dump()

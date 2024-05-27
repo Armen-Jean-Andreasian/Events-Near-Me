@@ -80,7 +80,7 @@ if process_button:
                 fixed_date=fixed_date,
                 custom_date=custom_date,
                 # unnecessary for user => hardcoded
-                # save_raw_html=True,
+                save_raw_html=True,
                 # save_clear_html=True,
                 # use_server_data=True,
             )
@@ -95,7 +95,7 @@ if process_button:
                 # displaying results
 
                 st.success("Results:")
-                results: list[dict] = events.to_dict.get("data")
+                results: list[dict] = events.model_dump().get("data")
 
 
                 def display_event_details(event_container):
