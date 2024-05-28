@@ -125,8 +125,6 @@ if process_button:
 				           f"there are no events in the area. Try searching by name or expanding the search area.")
 
 			else:
-				print(events.data)
-				print(type(events.data))
 				st.success("Results:")
 				results: list[dict] = events.model_dump().get("data")
 
