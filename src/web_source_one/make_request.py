@@ -18,7 +18,7 @@ class SourceOneHtmlScraperAbs(ABC):
 	def _generate_url(self,
 	                  location: Location,
 	                  entrance_fee: EntranceFee = None,
-	                  event_category: Category = None,
+	                  event_category: EventCategory = None,
 	                  custom_event_name: str = None,
 	                  fixed_date: FixedDate = None,
 	                  custom_date: CustomDate = None) -> str:
@@ -35,7 +35,7 @@ class SourceOneHtmlScraperAbs(ABC):
 	def find_events(self,
 	                location: Location,
 	                entrance_fee: EntranceFee,
-	                event_category: Category,
+	                event_category: EventCategory,
 	                custom_event_name: str,
 	                fixed_date: FixedDate,
 	                custom_date: CustomDate) -> "ResponseModel":

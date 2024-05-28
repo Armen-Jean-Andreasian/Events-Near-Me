@@ -1,5 +1,5 @@
 from config import Config
-from src.tools.url_scraper.url_params import *
+from src.tools.url_scraper.url_params import Location, CustomDate
 from src.tools.helpers import save_file
 from src.tools.helpers import save_json_file
 from src.web_source_one import SourceOneHtmlAnalyzer
@@ -8,6 +8,7 @@ from src.web_source_one import SourceOneHtmlScraperAsync
 from src.web_source_one import SourceOneJsonParser
 # from src.web_source_one import SourceOneJsonParserWithoutCustomEvent
 from src.tools.models.response_model import ResponseModel
+from src.tools.url_scraper.url_params._types import EventCategory, EntranceFee, FixedDate
 
 
 class EventsApp:
@@ -18,10 +19,10 @@ class EventsApp:
 	def find_events(
 			self,
 			location: Location,
-			entrance_fee: PaidEntrance | FreeEntrance = None,
-			event_category: BusinessCategory = None,
+			entrance_fee: EntranceFee = None,
+			event_category: EventCategory = None,
 			custom_event_name: str = None,
-			fixed_date: Today | Tomorrow | ThisWeekend = None,
+			fixed_date: FixedDate = None,
 			custom_date: CustomDate = None,
 			save_raw_html: bool = False,
 			save_clear_html: bool = False,
@@ -34,15 +35,19 @@ class EventsApp:
 		scraper_response: ResponseModel = source_one_html_scraper.find_events(
 			location, entrance_fee, event_category, custom_event_name, fixed_date, custom_date)
 
-		source_one_html_code: str = scraper_response.data
+		source_one_html_code: str | None = scraper_response.data
 
-		if save_raw_html:
+		if save_raw_html and source_one_html_code:
 			save_file(content=source_one_html_code, path=Config.raw_html_filename)
 			print(f"HTML content was saved to {Config.raw_html_filename} successfully")
 
 		if scraper_response.status != "success":
-			print(scraper_response.model_dump())
-			exit()
+			return ResponseModel(
+				status=scraper_response.status,
+				status_code=scraper_response.status_code,
+				data=scraper_response.description
+			)
+
 		else:
 			html_analyzer = SourceOneHtmlAnalyzer(html_source=source_one_html_code)
 			clear_html: str = html_analyzer.parse_html()
@@ -61,14 +66,13 @@ class EventsApp:
 			save_json_file(content=server_data, path=Config.server_data_json_filepath)
 			print(f"Json was saved to {Config.server_data_json_filepath} ")
 
-			result = SourceOneJsonParser.parse_server_data(server_data)
+			result: list | None = SourceOneJsonParser.parse_server_data(server_data)
 
 			# if use_react_query_state:
 			#     react_query_state = data_dict.get(Config.react_query_dict_key)
 			#     self.save_json(content=react_query_state, path=Config.react_query_json_filepath)
 
-			return ResponseModel(
-				status="success",
-				status_code=200,
-				data=result
-			)
+			if result:
+				return ResponseModel(status="success", status_code=200, data=result)
+			else:
+				return ResponseModel(status="fail", status_code=404)

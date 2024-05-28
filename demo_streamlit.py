@@ -25,14 +25,41 @@ st_event_name = st.text_input(label="Enter the name of event (optional): ",
                               key="event_name").strip()
 
 st_entrance_fee = st.selectbox(label="Choose the entrance fee (optional): ",
-                               options=(NOT_CHOSEN_CHAR, PaidEntrance(), FreeEntrance()),
+                               options=(
+	                               NOT_CHOSEN_CHAR,
+	                               PaidEntrance(),
+	                               FreeEntrance()
+                               ),
                                help="You can leave empty if you want to see both paid and free events.",
                                key='entrance_fee')
 
-st_event_category = st.selectbox(label="Choose the event category (optional):",
-                                 help="You can leave empty if you want to see the events of all categories.",
-                                 options=(NOT_CHOSEN_CHAR, BusinessCategory(),),
-                                 key='event_category')
+st_event_category_obj = st.selectbox(label="Choose the event category (optional):",
+                                     help="You can leave empty if you want to see the events of all categories.",
+                                     options=(
+	                                     NOT_CHOSEN_CHAR,
+	                                     BusinessCategory,
+	                                     FoodDrinkCategory,
+	                                     HealthCategory,
+	                                     MusicCategory,
+	                                     AutoBoatAirCategory,
+	                                     CharityCausesCategory,
+	                                     CommunityCategory,
+	                                     FamilyEducationCategory,
+	                                     FashionCategory,
+	                                     FilmMediaCategory,
+	                                     HobbiesCategory,
+	                                     HomeLifestyleCategory,
+	                                     PerformingVisualArtsCategory,
+	                                     GovernmentCategory,
+	                                     SpiritualityCategory,
+	                                     SchoolActivitiesCategory,
+	                                     ScienceTechCategory,
+	                                     HolidaysCategory,
+	                                     SportsFitnessCategory,
+	                                     TravelOutdoorCategory,
+	                                     OtherCategory
+                                     ),
+                                     key='event_category')
 
 st_fixed_date = st.selectbox(
 	label="Fixed Date (optional):",
@@ -40,7 +67,7 @@ st_fixed_date = st.selectbox(
 	options=(NOT_CHOSEN_CHAR, Today(), Tomorrow(), ThisWeekend())
 )
 
-st_checkbox_offline_only: bool = st.checkbox(label="Offline events only")
+st_checkbox_offline_only: bool = st.checkbox(label="Offline events only", value=True)
 
 custom_date_start = None
 custom_date_end = None
@@ -65,7 +92,7 @@ if process_button:
 
 		event_name: str | None = st_event_name if st_event_name else None
 		entrance_fee: FreeEntrance | PaidEntrance | None = st_entrance_fee if st_entrance_fee != NOT_CHOSEN_CHAR else None
-		event_category: BusinessCategory | None = st_event_category if st_event_category != NOT_CHOSEN_CHAR else None
+		event_category: BusinessCategory | None = st_event_category_obj() if st_event_category_obj != NOT_CHOSEN_CHAR else None
 
 		if custom_date_start and custom_date_end:
 			fixed_date = None
@@ -89,15 +116,17 @@ if process_button:
 				# use_server_data=True,
 			)
 
-			st.write(events.status_code, events.status)
+			# displaying results
+			# st.write(events.status_code, events.status)
 
-			if events.status_code != 200:
-				st.warning(events.message)
-				st.warning(events.description)
+			if events.data == "Not found" or events.data is None:  # if no events found
+				st.warning(f"No events found near {st_location}")
+				st.warning(f"This could mean that events are listed under a different address, or "
+				           f"there are no events in the area. Try searching by name or expanding the search area.")
 
 			else:
-				# displaying results
-
+				print(events.data)
+				print(type(events.data))
 				st.success("Results:")
 				results: list[dict] = events.model_dump().get("data")
 
@@ -135,16 +164,28 @@ if process_button:
 						st.write("Maps are under construction")
 
 
+				# def not_junk_event(event_container: dict) -> bool:
+				# 	# length of description should be longer than 5 words
+				# 	description: str = event_container.get("description")
+				#
+				#
+				# 	if description is None:
+				# 		return True
+				# 	elif len(description.split()) < 2:
+				# 		return True
+				# 	return False
+
+
 				for event_container in results:
-					st.divider()
+					# if not_junk_event(event_container):
+					# 	continue
+					# else:
+						if st_checkbox_offline_only:
+							if event_container.get("is_online_event"):
+								continue  # skipping the container
+							elif event_container.get("city") is None:
+								continue
 
-					if st_checkbox_offline_only:  # checkbox - location only. else : any
-						if (
-								"country" and "city" and "region" and "postal_code" and "address_1" and "latitude" and "longitude") in event_container:
-							display_event_details(event_container)
-							display_event_location(event_container)
-						else:
-							continue  # skipping the event as it's online and "offline only" is checked
-
-					else:  # displaying event details only
+						st.divider()
 						display_event_details(event_container)
+						display_event_location(event_container)

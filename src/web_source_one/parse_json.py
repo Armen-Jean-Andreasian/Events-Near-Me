@@ -1,20 +1,50 @@
-def extract_jsonld(server_data: dict):
-    jsonld_found: list[dict] = server_data.get('jsonld')
+def extract_jsonld(server_data: dict) -> list[dict] | None:
+    jsonld_found: list[dict] | None = server_data.get('jsonld')
+
+    if jsonld_found == [{}]:
+        return None
+
+
     elements: list[dict] = jsonld_found[0].get('itemListElement')  # list of dicts
 
     server_data_results = []
     temp = {}
+
+    def is_event_junk(container: dict) -> bool:
+        # length of description should be longer than 5 words
+        description: str = container.get("description")
+
+        if description is None:
+            return True
+        elif len(description.split()) < 2:
+            return True
+        return False
+
 
     def search_and_add(container_key: str, source_key: str, container: dict, source: dict):
         if source_key in source:
             container[container_key] = source.get(source_key)
         return container
 
+    events_collected = []  # how could I ?
+
     for element in elements:
         if 'item' in element:
             item = element.get('item')
-            temp = search_and_add(source_key='startDate', container_key='start_date', container=temp, source=item)
 
+            # checking for ads, memes and other junk events, skipping if yes
+            if is_event_junk(item) is True:
+                continue
+
+            # avoiding duplicate events
+            event_name = item.get('name')
+            if event_name in events_collected:
+                continue
+            else:
+                events_collected.append(event_name)
+
+
+            temp = search_and_add(source_key='startDate', container_key='start_date', container=temp, source=item)
             temp = search_and_add(source_key='endDate', container_key='end_date', container=temp, source=item)
             temp = search_and_add(source_key='description', container_key='description', container=temp, source=item)
             temp = search_and_add(source_key='image', container_key='image', container=temp, source=item)
@@ -42,6 +72,8 @@ def extract_jsonld(server_data: dict):
 
         server_data_results.append(temp.copy())  # python is linkedin crap that's why .copy()
         temp.clear()
+
+    events_collected.clear()
 
     return server_data_results
 

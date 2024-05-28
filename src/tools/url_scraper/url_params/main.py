@@ -10,7 +10,7 @@ class UrlGenerator:
             base_url: str,
             location: "Location",
             entrance_fee: Union["EntranceFee", None],
-            event_category: Union["Category", None],
+            event_category: Union["EventCategory", None],
             custom_event_name: str | None,
             fixed_date: Union["FixedDate", None],
             custom_date: Union["CustomDate", None]
