@@ -24,6 +24,13 @@ Stay up-to-date with real-time notifications, easy ticket purchasing, and detail
 
 ---
 
+# Alpha Version Available at:
+
+- Streamlit : [`https://events-near-me.streamlit.app/`](https://events-near-me.streamlit.app/) 
+
+---
+
+
 # Author
 
 Armen-Jean Andreasian, 2024
