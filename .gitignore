@@ -3,3 +3,5 @@
 /dev.py
 .idea
 /dev/
+/st_secrets.toml
+/.streamlit/
