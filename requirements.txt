@@ -1,0 +1,6 @@
+pydantic~=2.4.2
+python-dotenv~=1.0.0
+httpx~=0.27.0
+requests~=2.31.0
+certifi~=2023.7.22
+streamlit~=1.30.0
